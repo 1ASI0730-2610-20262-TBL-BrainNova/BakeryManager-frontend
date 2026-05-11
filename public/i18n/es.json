@@ -1,4 +1,27 @@
 {
+  "option": {
+    "home": "Inicio",
+    "about": "Acerca de nosotros",
+    "inventory": "Inventario"
+  },
+  "about": {
+    "title": "Acerca de nosotros",
+    "content": "BakeryManager es una solución para las necesidades de tu panadería."
+  },
+  "home": {
+    "title": "Bienvenido",
+    "content": "Bienvenido a BakeryManager."
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "La ruta <strong>{{ invalid_path }}</strong> no es válida.",
+    "go-home": "Ir al inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "powered-by": "Desarrollado por",
+    "and": "y"
+  },
   "inventory": {
     "title": "Gestión de Inventario - BakeryManager",
     "form": {
