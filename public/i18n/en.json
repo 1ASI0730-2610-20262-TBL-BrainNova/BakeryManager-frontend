@@ -22,7 +22,7 @@
     "and": "and"
   },
   "inventory": {
-    "title": "Inventory Management",
+    "title": "Inventory Management - BakeryManager",
     "form": {
       "title": "Register New Supply",
       "name": "Supply Name",
