@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
-import { InventoryItem } from '../../../domain/model/inventory-item.model';
+import { InventoryItem } from '../../../domain/model/inventory-item';
 
 /**
  * Displays a list of inventory-management items.

@@ -1,4 +1,4 @@
-import { InventoryItem } from '../domain/model/inventory-item.model';
+import { InventoryItem } from '../domain/model/inventory-item';
 
 /**
  *  Assembler for converting between API resources and InventoryItem entities.

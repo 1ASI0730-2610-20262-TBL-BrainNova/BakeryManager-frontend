@@ -5,11 +5,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { InventoryItem } from '../../../domain/model/inventory-item.model';
+import { InventoryItem } from '../../../domain/model/inventory-item';
 
 /**
  * InventoryItemForm is a standalone Angular component designed to manage
- * the creation of inventory-management items using a reactive form. It provides an
+ * the creation of inventory items using a reactive form. It provides an
  * interface to input item details and emits the created item upon form submission.
  *
  * Component Features:
@@ -20,7 +20,7 @@ import { InventoryItem } from '../../../domain/model/inventory-item.model';
  * - Resets the form after each successful submission with default values.
  *
  * Outputs:
- * - `itemAdded`: An event emitted when a new inventory-management item is successfully
+ * - `itemAdded`: An event emitted when a new inventory item is successfully
  *   created. The emitted value omits the 'id' field since it is assumed to
  *   be assigned elsewhere.
  *
@@ -30,7 +30,7 @@ import { InventoryItem } from '../../../domain/model/inventory-item.model';
  *
  * Methods:
  * - `onSubmit`: Triggered when the form is submitted. Validates form input,
- *   emits the created inventory-management item, and resets the form to its default state.
+ *   emits the created inventory item, and resets the form to its default state.
  */
 @Component({
   selector: 'app-inventory-item-form',
@@ -54,9 +54,9 @@ export class InventoryItemForm {
   unitOptions = ['kg', 'litres', 'unidades', 'gramos'];
 
   /**
-   * Constructs an instance of the class and initializes the inventory-management form.
+   * Constructs an instance of the class and initializes the inventory form.
    *
-   * @param {FormBuilder} fb - An instance of FormBuilder used to create and manage the reactive form for inventory-management details.
+   * @param {FormBuilder} fb - An instance of FormBuilder used to create and manage the reactive form for inventory details.
    * @return {void} This constructor does not return a value.
    */
   constructor(private fb: FormBuilder) {
@@ -70,8 +70,8 @@ export class InventoryItemForm {
   }
 
   /**
-   * Handles the submission of the inventory-management form. If the form is valid, extracts the form values,
-   * creates a new inventory-management item, emits the new item, and resets the form to its default state.
+   * Handles the submission of the inventory form. If the form is valid, extracts the form values,
+   * creates a new inventory item, emits the new item, and resets the form to its default state.
    * @return {void} This method does not return a value.
    */
   onSubmit(): void {
