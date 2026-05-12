@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+mat-toolbar,
+.mat-toolbar,
+header,
+nav,
+.header-container {
+  background-color: #4a3728 !important;
+  color: #d2b48c !important;
+}
+
+.nav-link, a {
+  color: #d2b48c !important;
+}

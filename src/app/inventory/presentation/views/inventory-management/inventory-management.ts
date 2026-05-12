@@ -1,23 +1,24 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InventoryItemForm } from '../../components/inventory-item-form/inventory-item-form';
-import { InventoryItemList } from '../../components/inventory-item-list/inventory-item-list';
-import { InventoryItem } from '../../../domain/model/inventory-item';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { InventoryService } from '../../../infrastructure/inventory.services';
+import { InventoryItem } from '../../../domain/model/inventory-item';
+
+import { InventoryItemForm } from '../../components/inventory-item-form/inventory-item-form';
+import { InventoryItemList } from '../../components/inventory-item-list/inventory-item-list';
 
 @Component({
   selector: 'app-inventory-management',
   standalone: true,
   imports: [
     CommonModule,
-    InventoryItemForm,
-    InventoryItemList,
     TranslateModule,
     MatButtonModule,
     MatIconModule,
+    InventoryItemForm,
+    InventoryItemList,
   ],
   templateUrl: './inventory-management.html',
   styleUrl: './inventory-management.css',
@@ -31,7 +32,7 @@ export class InventoryManagement implements OnInit {
   private cdr = inject(ChangeDetectorRef);
 
   constructor() {
-   this.translate.onLangChange.subscribe(() => {
+    this.translate.onLangChange.subscribe(() => {
       this.cdr.detectChanges();
     });
   }
