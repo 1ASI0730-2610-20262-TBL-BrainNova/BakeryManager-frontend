@@ -22,6 +22,7 @@
     "powered-by": "Desarrollado por",
     "and": "y"
   },
+
   "inventory": {
     "title": "Gestión de Inventario - BakeryManager",
     "form": {
@@ -35,7 +36,9 @@
       "button": "Agregar al Inventario",
       "open": "Agregar Ítem",
       "close": "Cerrar Formulario"
-    },
+    }
+  },
+
     "table": {
       "supply": "Insumo",
       "actual_stock": "Stock Actual",

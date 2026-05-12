@@ -1,0 +1,20 @@
+[
+  {
+    "name": "sasa",
+    "description": "a",
+    "quantity": 4,
+    "unit": "kg",
+    "minStock": 1,
+    "lastUpdated": 1778534593,
+    "id": "1"
+  },
+  {
+    "name": "harina",
+    "description": "harina de maiz",
+    "quantity": 4,
+    "unit": "kg",
+    "minStock": 1,
+    "lastUpdated": 17785345933,
+    "id": "2"
+  }
+]

@@ -29,5 +29,11 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@angular/fire/*": ["./node_modules/@angular/fire/*"]
+    },
+    "skipLibCheck": true
+  }
 }

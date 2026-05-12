@@ -82,5 +82,6 @@ export class InventoryManagement implements OnInit {
         alert('Error: no sé puede subir a la nube');
       },
     });
+
   }
 }
