@@ -20,5 +20,13 @@
     "rights": "Todos los derechos reservados.",
     "powered-by": "Desarrollado con",
     "and": "y"
+  },
+  "monitoring": {
+    "dashboard": {
+      "online-sensors": "Sensores en Línea",
+      "average-temperature": "Temp. Promedio",
+      "active-alerts": "Alertas Activas",
+      "last-reading": "Última Lectura"
+    }
   }
 }
