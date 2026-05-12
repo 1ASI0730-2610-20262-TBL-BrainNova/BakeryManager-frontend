@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InventoryItemForm } from '../../components/inventory-item-form/inventory-item-form';
 import { InventoryItemList } from '../../components/inventory-item-list/inventory-item-list';
 import { InventoryItem } from '../../../domain/model/inventory-item';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { InventoryService } from '../../../infrastructure/inventory.services';
@@ -26,18 +26,20 @@ export class InventoryManagement implements OnInit {
   inventoryItems: InventoryItem[] = [];
   isFormVisible = false;
 
-  constructor(private inventoryService: InventoryService) {}
+  private inventoryService = inject(InventoryService);
+  private translate = inject(TranslateService);
+  private cdr = inject(ChangeDetectorRef);
 
-  /**
-   * When the component starts, we retrieve the data from the cloud.
-   */
+  constructor() {
+   this.translate.onLangChange.subscribe(() => {
+      this.cdr.detectChanges();
+    });
+  }
+
   ngOnInit(): void {
     this.loadInventory();
   }
 
-  /**
-   * Call the service to get the list of supplies.
-   */
   loadInventory(): void {
     this.inventoryService.getAllItems().subscribe({
       next: (items) => {
@@ -53,13 +55,7 @@ export class InventoryManagement implements OnInit {
   }
 
   addItem(item: any): void {
-    console.log('1. Datos recibidos del formulario:', item);
-
-    // Si el item llega vacío o undefined, aquí saltará el error
-    if (!item) {
-      console.error('¡Papi, el formulario mandó un objeto vacío!');
-      return;
-    }
+    if (!item) return;
 
     const itemToSend = {
       name: item.name,
@@ -69,19 +65,16 @@ export class InventoryManagement implements OnInit {
       minStock: Number(item.minStock),
     };
 
-    console.log('2. Intentando enviar a MockAPI:', itemToSend);
-
     this.inventoryService.createItem(itemToSend as any).subscribe({
       next: (response) => {
-        console.log('3. ¡Éxito en la nube!:', response);
+        console.log('¡Éxito en la nube!:', response);
         this.loadInventory();
         this.isFormVisible = false;
       },
       error: (err) => {
-        console.error('4. Error detallado que bloquea el envío:', err);
+        console.error('Error detallado:', err);
         alert('Error: no sé puede subir a la nube');
       },
     });
-
   }
 }

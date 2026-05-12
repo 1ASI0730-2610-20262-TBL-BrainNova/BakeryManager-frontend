@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: 'AIzaSyB13aCI_-AWcwuSa9YPYoE6UQ_5CjOLiEc',
     authDomain: 'bakerymanager.firebaseapp.com',

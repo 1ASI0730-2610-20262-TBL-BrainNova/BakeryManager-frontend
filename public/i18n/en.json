@@ -22,6 +22,7 @@
     "powered-by": "Powered by",
     "and": "and"
   },
+
   "inventory": {
     "title": "Inventory Management - BakeryManager",
     "form": {
@@ -34,7 +35,10 @@
       "hint": "You will be notified when stock is equal to or less than this value.",
       "button": "Add to Inventory",
       "open": "Add Item",
-      "close": "Close Form"
+      "close": "Close Form",
+      "errors": {
+        "required": "Name is required ."
+      }
     },
     "table": {
       "supply": "Supply",
@@ -47,7 +51,7 @@
       "ok": "Available"
     },
     "errors": {
-      "required": "Name is required."
+      "required": "This field is required."
     }
   }
 }

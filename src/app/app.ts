@@ -17,8 +17,9 @@ export class App {
   constructor() {
     this.translate.addLangs(['en', 'es']);
     this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
-    const langToUse = browserLang?.match(/en|es/) ? browserLang : 'en';
-    this.translate.use(langToUse);
+
+    this.translate.onLangChange.subscribe((event) => {
+      console.log('BakeryManager detectó cambio a:', event.lang);
+    });
   }
 }

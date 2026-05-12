@@ -15,6 +15,7 @@ export const appConfig: ApplicationConfig = {
         prefix: './i18n/',
         suffix: '.json',
       }),
+      defaultLanguage: 'en',
     }),
     provideAnimationsAsync(),
   ],

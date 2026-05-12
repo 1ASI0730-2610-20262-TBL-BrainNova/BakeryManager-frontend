@@ -1,12 +1,12 @@
 {
   "option": {
     "home": "Inicio",
-    "about": "Acerca de nosotros",
+    "about": "Nosotros",
     "inventory": "Inventario"
   },
   "about": {
-    "title": "Acerca de nosotros",
-    "content": "BakeryManager es una solución para las necesidades de tu panadería."
+    "title": "Sobre nosotros",
+    "content": "BakeryManager es una solución para las necesidades de su panadería."
   },
   "home": {
     "title": "Bienvenido",
@@ -15,14 +15,13 @@
   "page-not-found": {
     "title": "Página no encontrada",
     "content": "La ruta <strong>{{ invalid_path }}</strong> no es válida.",
-    "go-home": "Ir al inicio"
+    "go-home": "Ir al Inicio"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "powered-by": "Desarrollado por",
     "and": "y"
   },
-
   "inventory": {
     "title": "Gestión de Inventario - BakeryManager",
     "form": {
@@ -32,13 +31,11 @@
       "stock": "Stock Inicial",
       "unit": "Unidad de Medida",
       "min_stock": "Stock Mínimo para Alerta",
-      "hint": "Se notificará cuando el stock sea igual o menor a este valor.",
+      "hint": "Se le notificará cuando el stock sea igual o inferior a este valor.",
       "button": "Agregar al Inventario",
       "open": "Agregar Ítem",
       "close": "Cerrar Formulario"
-    }
-  },
-
+    },
     "table": {
       "supply": "Insumo",
       "actual_stock": "Stock Actual",
@@ -46,7 +43,7 @@
       "status": "Estado"
     },
     "status": {
-      "restock": "Reabastecer",
+      "restock": "Reponer",
       "ok": "Disponible"
     },
     "errors": {
