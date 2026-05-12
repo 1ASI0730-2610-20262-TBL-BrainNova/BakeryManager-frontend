@@ -33,8 +33,11 @@ export class LanguageSwitcher {
    */
   constructor() {
     this.translate = inject(TranslateService);
-    this.currentLang = this.translate.getCurrentLang();
-    this.languages = [...this.translate.getLangs()];
+    // Ensure a valid current language is set (fallback to browser or 'en')
+    this.currentLang = this.translate.getCurrentLang() || this.translate.getBrowserLang() || 'en';
+    // Ensure language list includes supported languages; fall back to common set if not provided
+    const langs = this.translate.getLangs();
+    this.languages = langs && langs.length > 0 ? [...langs] : ['en', 'es'];
   }
 
   /**

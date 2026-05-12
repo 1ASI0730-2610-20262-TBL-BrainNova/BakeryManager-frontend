@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global design tokens and base styles for BakeryManager branding */
+:root {
+  /* Palette */
+  --color-cream: #F9F4EC;
+  --color-wheat: #E8D5B0;
+  --color-caramel: #C4862B;
+  --color-accent: #D4691E;
+  --color-espresso: #2C1A0E;
+  --color-espresso-dark: #1f1308;
+  --color-success: #5A8A5F;
+  --color-alert: #D9643E;
+
+  /* Utility */
+  --text-on-cream: #3b2717;
+  --muted-cream: rgba(59,39,23,0.24);
+}
+
+/* Typography */
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text-on-cream);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use display serif to convey the artisanal brand */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: var(--text-on-cream);
+}
+
+/* Card look used in many places */
+.bm-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.06);
+  padding: 14px;
+}
+
+/* Buttons primary */
+.bm-cta {
+  background: var(--color-caramel);
+  color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+}

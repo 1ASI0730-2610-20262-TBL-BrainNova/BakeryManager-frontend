@@ -33,8 +33,8 @@
     <mat-card class="state-card state-card--loading">
       <mat-progress-spinner mode="indeterminate" diameter="42"></mat-progress-spinner>
       <div>
-        <h3>Cargando producción</h3>
-        <p>Preparando el tablero de hornos.</p>
+        <h3>{{ 'production.loading_title' | translate }}</h3>
+        <p>{{ 'production.loading_content' | translate }}</p>
       </div>
     </mat-card>
   }
@@ -164,7 +164,7 @@
       <mat-card class="chart-card">
         <div class="chart-header">
           <div>
-            <h3>Producción por producto — semana</h3>
+            <h3>{{ 'production.production_by_product_week' | translate }}</h3>
           </div>
 
           <mat-form-field appearance="outline" class="range-field">
@@ -192,7 +192,7 @@
       <mat-card class="chart-card">
         <div class="chart-header">
           <div>
-            <h3>Producción diaria — últimos 7 días</h3>
+            <h3>{{ 'production.daily_production_last_7' | translate }}</h3>
           </div>
 
           <div class="chart-chip">{{ selectedChartRangeLabel() }}</div>
@@ -247,24 +247,24 @@
     <section class="section-block">
       <mat-card class="summary-footer">
         <div>
-          <p>Resumen general</p>
+          <p>{{ 'production.general_summary' | translate }}</p>
           <strong>{{ dashboard.totalLines }}</strong>
-          <span>Hornos totales</span>
+          <span>{{ 'production.ovens_total' | translate }}</span>
         </div>
         <div>
-          <p>En funcionamiento</p>
+          <p>{{ 'production.running_label' | translate }}</p>
           <strong>{{ dashboard.runningLines }}</strong>
-          <span>Activos</span>
+          <span>{{ 'production.active_label' | translate }}</span>
         </div>
         <div>
-          <p>Con advertencia</p>
+          <p>{{ 'production.warning_label' | translate }}</p>
           <strong>{{ dashboard.warningLines }}</strong>
-          <span>En observación</span>
+          <span>{{ 'production.in_observation' | translate }}</span>
         </div>
         <div>
-          <p>Detenido</p>
+          <p>{{ 'production.stopped_label' | translate }}</p>
           <strong>{{ dashboard.stoppedLines }}</strong>
-          <span>Inactivos</span>
+          <span>{{ 'production.inactives' | translate }}</span>
         </div>
       </mat-card>
 
