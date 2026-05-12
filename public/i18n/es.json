@@ -87,5 +87,39 @@
       "no-connection": "No se puede conectar al servidor. Intenta de nuevo.",
       "unexpected": "Ocurrió un error inesperado. Intenta de nuevo."
     }
+  },
+  "inventory": {
+    "title": "Gestión de Inventario - BakeryManager",
+    "form": {
+      "title": "Registrar Nuevo Insumo",
+      "name": "Nombre del Insumo",
+      "description": "Descripción",
+      "stock": "Stock Inicial",
+      "unit": "Unidad de Medida",
+      "min_stock": "Stock Mínimo para Alerta",
+      "hint": "Se le notificará cuando el stock sea igual o inferior a este valor.",
+      "button": "Agregar al Inventario",
+      "open": "Agregar Ítem",
+      "close": "Cerrar Formulario"
+    },
+    "table": {
+      "supply": "Insumo",
+      "actual_stock": "Stock Actual",
+      "unit": "Unidad",
+      "status": "Estado"
+    },
+    "status": {
+      "restock": "Reponer",
+      "ok": "Disponible"
+    },
+    "errors": {
+      "required": "El nombre es obligatorio."
+    },
+    "units": {
+      "kg": "kg",
+      "litros": "litros",
+      "unidades": "unidades",
+      "gramos": "gramos"
+    }
   }
 }

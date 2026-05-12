@@ -5,10 +5,9 @@ import { RoleType } from '../model/enums/role-type.enum';
 import { PermissionType } from '../model/enums/permission-type.enum';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationDomainService {
-
   isValidEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -19,6 +18,9 @@ export class AuthenticationDomainService {
   }
 
   isTokenExpired(token: string): boolean {
+    // TODO: remove when backend is ready
+    if (token === 'fake-jwt-token') return false;
+
     try {
       const payload = JSON.parse(atob(token.split('.')[1]));
       const expiry = payload.exp * 1000;
@@ -29,9 +31,12 @@ export class AuthenticationDomainService {
   }
 
   extractRoleFromToken(token: string): RoleType | null {
+    // TODO: remove when backend is ready
+    if (token === 'fake-jwt-token') return RoleType.OWNER;
+
     try {
       const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload.role as RoleType ?? null;
+      return (payload.role as RoleType) ?? null;
     } catch {
       return null;
     }
@@ -65,7 +70,7 @@ export class AuthenticationDomainService {
         firstName: payload.firstName,
         lastName: payload.lastName,
         role: payload.role as RoleType,
-        isActive: true
+        isActive: true,
       };
     } catch {
       return null;

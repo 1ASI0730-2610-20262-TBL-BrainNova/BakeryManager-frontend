@@ -87,5 +87,44 @@
       "no-connection": "Cannot connect to server. Please try again.",
       "unexpected": "An unexpected error occurred. Please try again."
     }
+  },
+  "inventory": {
+    "title": "Inventory Management - BakeryManager",
+    "form": {
+      "title": "Register New Supply",
+      "name": "Supply Name",
+      "description": "Description",
+      "stock": "Initial Stock",
+      "unit": "Unit of Measure",
+      "min_stock": "Minimum Stock for Alert",
+      "hint": "You will be notified when stock is equal to or less than this value.",
+      "button": "Add to Inventory",
+      "open": "Add Item",
+      "close": "Close Form",
+
+      "errors": {
+        "required": "Name is required ."
+      }
+    },
+    "table": {
+      "supply": "Supply",
+      "actual_stock": "Current Stock",
+      "unit": "Unit",
+      "status": "Status"
+    },
+    "status": {
+      "restock": "Replenish",
+      "ok": "Available"
+    },
+    "errors": {
+      "required": "This field is required."
+    },
+    "units": {
+      "kg": "kg",
+      "litros": "liters",
+      "unidades": "units",
+      "gramos": "grams"
+    }
   }
 }
+

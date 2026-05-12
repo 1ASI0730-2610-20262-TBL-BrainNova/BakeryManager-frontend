@@ -11,17 +11,14 @@ export class Role {
       PermissionType.WRITE,
       PermissionType.DELETE,
       PermissionType.MANAGE_USERS,
-      PermissionType.MANAGE_SENSORS
+      PermissionType.MANAGE_SENSORS,
     ],
     [RoleType.ADMINISTRATOR]: [
       PermissionType.READ,
       PermissionType.WRITE,
-      PermissionType.MANAGE_SENSORS
+      PermissionType.MANAGE_SENSORS,
     ],
-    [RoleType.OPERATIONAL_STAFF]: [
-      PermissionType.READ,
-      PermissionType.WRITE
-    ]
+    [RoleType.OPERATIONAL_STAFF]: [PermissionType.READ, PermissionType.WRITE],
   };
 
   constructor(type: RoleType) {
@@ -37,16 +34,16 @@ export class Role {
     const labels: Record<RoleType, string> = {
       [RoleType.OWNER]: 'Owner / Administrator',
       [RoleType.ADMINISTRATOR]: 'Branch Manager',
-      [RoleType.OPERATIONAL_STAFF]: 'Operational Staff'
+      [RoleType.OPERATIONAL_STAFF]: 'Operational Staff',
     };
     return labels[this.type];
   }
 
   getDashboardRoute(): string {
     const routes: Record<RoleType, string> = {
-      [RoleType.OWNER]: '/dashboard',
-      [RoleType.ADMINISTRATOR]: '/dashboard',
-      [RoleType.OPERATIONAL_STAFF]: '/dashboard'
+      [RoleType.OWNER]: '/inventory',
+      [RoleType.ADMINISTRATOR]: '/inventory',
+      [RoleType.OPERATIONAL_STAFF]: '/inventory',
     };
     return routes[this.type];
   }

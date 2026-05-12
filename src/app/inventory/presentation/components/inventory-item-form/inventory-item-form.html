@@ -1,0 +1,48 @@
+<section class="form-container">
+  <h2 class="form-title">{{ 'inventory.form.title' | translate }}</h2>
+
+  <form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()" class="inventory-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'inventory.form.name' | translate }}</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="inventoryForm.get('name')?.hasError('required')">
+        {{ 'inventory.errors.required' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'inventory.form.description' | translate }}</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'inventory.form.stock' | translate }}</mat-label>
+        <input matInput type="number" formControlName="quantity">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'inventory.form.unit' | translate }}</mat-label>
+        <mat-select formControlName="unit">
+          <mat-option *ngFor="let unit of unitOptions" [value]="unit">
+            {{ 'inventory.units.' + unit | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'inventory.form.min_stock' | translate }}</mat-label>
+      <input matInput type="number" formControlName="minStock">
+      <mat-hint>{{ 'inventory.form.hint' | translate }}</mat-hint>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="inventoryForm.invalid">
+        {{ 'inventory.form.button' | translate }}
+      </button>
+    </div>
+
+  </form>
+</section>

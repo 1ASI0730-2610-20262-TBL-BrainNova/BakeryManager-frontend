@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> {{ 'inventory.table.supply' | translate }} </th>
+    <td mat-cell *matCellDef="let item"> {{item.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef> {{ 'inventory.table.actual_stock' | translate }} </th>
+    <td mat-cell *matCellDef="let item"> {{item.quantity}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="unit">
+    <th mat-header-cell *matHeaderCellDef> {{ 'inventory.table.unit' | translate }} </th>
+    <td mat-cell *matCellDef="let item">
+      {{ 'inventory.units.' + item.unit | translate }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> {{ 'inventory.table.status' | translate }} </th>
+    <td mat-cell *matCellDef="let item">
+      {{ (isLowStock(item) ? 'inventory.status.restock' : 'inventory.status.ok') | translate }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

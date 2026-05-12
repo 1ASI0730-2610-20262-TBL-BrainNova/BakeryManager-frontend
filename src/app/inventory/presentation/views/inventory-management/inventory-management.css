@@ -1,0 +1,57 @@
+
+.inventory-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inventory-header h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #3f51b5;
+  display: inline-block;
+}
+
+.inventory-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.spacer {
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 10px 0;
+}
+
+.form-section, .list-section {
+  width: 100%;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1000;
+  border-radius: 50px;
+  padding: 15px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.form-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
