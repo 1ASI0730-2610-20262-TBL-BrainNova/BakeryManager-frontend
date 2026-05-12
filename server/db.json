@@ -1,0 +1,120 @@
+{
+  "sensors": [
+    {
+      "id": 1,
+      "name": "Temperature Sensor - Oven 1",
+      "type": 0,
+      "status": 0,
+      "location": "Oven 1",
+      "minThreshold": 50,
+      "maxThreshold": 300,
+      "installedAt": "2025-01-10T08:00:00.000Z",
+      "lastReadingAt": "2026-05-12T07:45:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Humidity Sensor - Storage",
+      "type": 1,
+      "status": 0,
+      "location": "Storage Room",
+      "minThreshold": 20,
+      "maxThreshold": 80,
+      "installedAt": "2024-11-05T10:30:00.000Z",
+      "lastReadingAt": "2026-05-11T12:10:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Gas Sensor - Kitchen",
+      "type": 2,
+      "status": 0,
+      "location": "Kitchen",
+      "minThreshold": 0,
+      "maxThreshold": 100,
+      "installedAt": "2026-02-20T14:00:00.000Z",
+      "lastReadingAt": null
+    },
+    {
+      "id": 4,
+      "name": "Smoke Sensor - Baking Area",
+      "type": 3,
+      "status": 1,
+      "location": "Baking Area",
+      "minThreshold": 0,
+      "maxThreshold": 1,
+      "installedAt": "2023-08-01T09:00:00.000Z",
+      "lastReadingAt": "2026-05-10T16:20:00.000Z"
+    }
+  ],
+  "incidents": [
+    {
+      "id": 1,
+      "title": "High temperature detected in Oven 1",
+      "description": "Temperature exceeded max threshold of 300°C",
+      "status": 1,
+      "detectedAt": "2026-05-12T07:40:00.000Z",
+      "confirmedAt": "2026-05-12T07:42:00.000Z",
+      "resolvedAt": null,
+      "canceledAt": null
+    },
+    {
+      "id": 2,
+      "title": "Humidity spike in Storage",
+      "description": "Relative humidity above 80% for 15 minutes",
+      "status": 0,
+      "detectedAt": "2026-05-11T12:05:00.000Z",
+      "confirmedAt": null,
+      "resolvedAt": null,
+      "canceledAt": null
+    },
+    {
+      "id": 3,
+      "title": "Gas leak alarm in Kitchen",
+      "description": "Gas concentration reached warning level",
+      "status": 2,
+      "detectedAt": "2026-02-20T14:05:00.000Z",
+      "confirmedAt": "2026-02-20T14:06:00.000Z",
+      "resolvedAt": "2026-02-20T14:30:00.000Z",
+      "canceledAt": null
+    },
+    {
+      "id": 4,
+      "title": "False alarm smoke sensor",
+      "description": "Smoke sensor triggered during cleaning; no fire found",
+      "status": 3,
+      "detectedAt": "2025-11-01T09:10:00.000Z",
+      "confirmedAt": null,
+      "resolvedAt": null,
+      "canceledAt": "2025-11-01T09:20:00.000Z"
+    }
+  ],
+  "alerts": [
+    {
+      "id": 1,
+      "message": "Oven 1 temperature critical: 310°C",
+      "severity": 3,
+      "isRead": false,
+      "generatedAt": "2026-05-12T07:41:00.000Z"
+    },
+    {
+      "id": 2,
+      "message": "Storage humidity high: 85%",
+      "severity": 2,
+      "isRead": false,
+      "generatedAt": "2026-05-11T12:06:00.000Z"
+    },
+    {
+      "id": 3,
+      "message": "Gas sensor warning in Kitchen",
+      "severity": 1,
+      "isRead": true,
+      "generatedAt": "2026-02-20T14:06:00.000Z"
+    },
+    {
+      "id": 4,
+      "message": "Smoke sensor false alarm resolved",
+      "severity": 0,
+      "isRead": true,
+      "generatedAt": "2025-11-01T09:20:00.000Z"
+    }
+  ]
+}
