@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Carlos",
+      "lastName": "Mendoza",
+      "email": "carlos@bakery.com",
+      "password": "12345678",
+      "role": "owner"
+    },
+    {
+      "id": 2,
+      "firstName": "Ana",
+      "lastName": "Quispe",
+      "email": "ana@bakery.com",
+      "password": "12345678",
+      "role": "operational-staff"
+    }
+  ]
+}
