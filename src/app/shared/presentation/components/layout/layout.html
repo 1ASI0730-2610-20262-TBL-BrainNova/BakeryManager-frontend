@@ -9,17 +9,16 @@
     </div>
 
     <nav class="nav-panel">
-      @for (option of options(); track option.link) {
-        <a
-          mat-list-item
-          [routerLink]="option.link"
-          routerLinkActive="active"
-          class="nav-link"
-        >
-          <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
-          <span matListItemTitle>{{ option.label | translate }}</span>
-        </a>
-      }
+      <a
+        *ngFor="let option of options()"
+        mat-list-item
+        [routerLink]="option.link"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
+        <span matListItemTitle>{{ option.label | translate }}</span>
+      </a>
     </nav>
   </mat-sidenav>
 

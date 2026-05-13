@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -19,6 +20,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
 @Component({
   selector: 'app-layout',
   imports: [
+    CommonModule,
     RouterOutlet,
     RouterLink,
     MatToolbarModule,
