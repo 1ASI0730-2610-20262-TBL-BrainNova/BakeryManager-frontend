@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { TranslateService } from '@ngx-translate/core';
@@ -7,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-language-switcher',
-  imports: [MatButtonToggleModule],
+  imports: [CommonModule, MatButtonToggleModule],
   templateUrl: './language-switcher.html',
   styleUrl: './language-switcher.css',
 })
