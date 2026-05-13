@@ -1,0 +1,12 @@
+<section class="production-summary-grid">
+  <mat-card *ngFor="let tile of tiles" class="summary-card summary-card--{{ tile.accent }}">
+    <div class="summary-icon">
+      <mat-icon>{{ tile.icon }}</mat-icon>
+    </div>
+    <div class="summary-copy">
+      <h3>{{ tile.label | translate }}</h3>
+      <strong>{{ tile.value }}</strong>
+    </div>
+  </mat-card>
+</section>
+

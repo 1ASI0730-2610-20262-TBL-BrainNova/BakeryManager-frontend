@@ -1,0 +1,17 @@
+.top-summary-grid {
+  padding: 8px 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.summary-card {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #e7dccf;
+  background: #fff;
+}
+.card-title { color: #7b6b57; font-size: 0.85rem; margin-bottom: 6px; }
+.card-value { font-weight: 600; font-size: 1.05rem; }
+.card-value.big { font-size: 1.5rem; }
+.card-value.alert { color: #c0392b; }

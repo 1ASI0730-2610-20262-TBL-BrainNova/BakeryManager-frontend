@@ -1,0 +1,79 @@
+<mat-card class="batch-card batch-card--{{ getBatchStatusTone() }}">
+  <div class="batch-head">
+    <div class="batch-title">
+      <span class="status-dot status-dot--{{ getBatchStatusTone() }}"></span>
+      <div>
+        <h4>{{ batch.name | translate }}</h4>
+        <span class="status-pill status-pill--{{ getBatchStatusTone() }}">
+          {{ getBatchStatusLabel() | translate }}
+        </span>
+      </div>
+    </div>
+
+    <button mat-icon-button type="button" [attr.aria-label]="'production.view_oven' | translate">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="batch-grid">
+    <div class="batch-overview">
+      <div class="oven-illustration">
+        <mat-icon>kitchen</mat-icon>
+      </div>
+      <div class="batch-timing">
+        <p>{{ 'production.started' | translate }} {{ formatTime(batch.startedAt) }}</p>
+        <strong>{{ formatRemainingTime() }}</strong>
+      </div>
+    </div>
+
+    <article class="metric-card metric-card--{{ isTemperatureAlert() ? 'warning' : 'success' }}">
+      <div class="metric-label">
+        <mat-icon>thermostat</mat-icon>
+        <span>{{ 'production.temperature' | translate }}</span>
+      </div>
+      <div class="metric-value">
+        {{ batch.temperature }} <span>°C</span>
+      </div>
+      <small>{{ 'production.setpoint' | translate }}: {{ batch.temperatureSetpoint ?? '—' }} °C</small>
+      <div *ngIf="isTemperatureAlert()" class="metric-flag">{{ 'production.high' | translate }}</div>
+    </article>
+
+    <article class="metric-card metric-card--{{ isHumidityAlert() ? 'warning' : 'success' }}">
+      <div class="metric-label">
+        <mat-icon>water_drop</mat-icon>
+        <span>{{ 'production.humidity' | translate }}</span>
+      </div>
+      <div class="metric-value">
+        {{ batch.humidity ?? 0 }} <span>%</span>
+      </div>
+      <small>{{ 'production.setpoint' | translate }}: {{ batch.humiditySetpoint ?? '—' }} %</small>
+      <div *ngIf="isHumidityAlert()" class="metric-flag">{{ 'production.high' | translate }}</div>
+    </article>
+
+    <article class="metric-card metric-card--{{ isElectricAlert() ? 'warning' : 'success' }}">
+      <div class="metric-label">
+        <mat-icon>bolt</mat-icon>
+        <span>{{ 'production.electric_flow' | translate }}</span>
+      </div>
+      <div class="metric-value">
+        {{ batch.currentElectricFlow ?? 0 }} <span>A</span>
+      </div>
+      <small>{{ 'production.setpoint' | translate }}: 12.0 A</small>
+      <div *ngIf="isElectricAlert()" class="metric-flag">{{ 'production.high' | translate }}</div>
+    </article>
+
+    <article class="metric-card metric-card--state">
+      <div class="metric-label">
+        <mat-icon>{{ getStatusIcon() }}</mat-icon>
+        <span>{{ 'production.status' | translate }}</span>
+      </div>
+      <div class="metric-value metric-value--state">
+        {{ batch.status === 'stopped' ? '0' : batch.status === 'warning' ? '1' : '✓' }}
+      </div>
+      <small>{{ getBatchStatusLabel() | translate }}</small>
+    </article>
+  </div>
+</mat-card>
+

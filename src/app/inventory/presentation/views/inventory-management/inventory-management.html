@@ -1,23 +1,21 @@
 <div class="inventory-container">
-
   <header class="inventory-header">
-    <h1>{{ 'inventory.title' | translate }}</h1>
+    <span class="main-title">BakeryManager</span>
+    <span class="sub-title">By BrainNova</span>
   </header>
 
+  <main class="inventory-layout">
+    <div class="form-section" *ngIf="isFormVisible">
+      <app-inventory-item-form (itemAdded)="addItem($event)"></app-inventory-item-form>
+    </div>
+
+    <div class="list-section" *ngIf="!isFormVisible">
+      <app-inventory-item-list [dataSource]="inventoryItems"></app-inventory-item-list>
+    </div>
+  </main>
+
   <button mat-fab extended color="primary" class="fab-button" (click)="toggleForm()">
-    <mat-icon>{{ isFormVisible ? 'close' : 'add' }}</mat-icon>
+    <mat-icon>{{ isFormVisible ? 'list' : 'add' }}</mat-icon>
     {{ (isFormVisible ? 'inventory.form.close' : 'inventory.form.open') | translate }}
   </button>
-
-  <main class="inventory-layout">
-
-    <section class="form-section" *ngIf="isFormVisible">
-      <app-inventory-item-form (itemAdded)="addItem($event)"></app-inventory-item-form>
-    </section>
-
-    <section class="list-section">
-      <app-inventory-item-list [dataSource]="inventoryItems"></app-inventory-item-list>
-    </section>
-
-  </main>
 </div>

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { Home } from './shared/presentation/views/home/home';
-import { LoginPageComponent } from './IAM/interfaces/pages/login-page/login-page.component';
-import { SignUpComponent } from './IAM/interfaces/components/sign-up/sign-up.component';
-import { authenticationGuard } from './IAM/infrastructure/guards/authentication.guard';
+import { LoginPageComponent } from './iam/interfaces/pages/login-page/login-page.component';
+import { SignUpComponent } from './iam/interfaces/components/sign-up/sign-up.component';
+import { authenticationGuard } from './iam/infrastructure/guards/authentication.guard';
 
 const about = () => import('./shared/presentation/views/about/about').then((m) => m.About);
 const pageNotFound = () => import('./shared/presentation/views/page-not-found/page-not-found').then((m) => m.PageNotFound);

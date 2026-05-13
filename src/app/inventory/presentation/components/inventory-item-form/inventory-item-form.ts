@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { InventoryItem } from '../../../domain/model/inventory-item';
 
@@ -18,6 +19,7 @@ import { InventoryItem } from '../../../domain/model/inventory-item';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatIconModule,
     TranslateModule,
   ],
   templateUrl: './inventory-item-form.html',
@@ -29,7 +31,7 @@ export class InventoryItemForm {
   inventoryForm: FormGroup;
   unitOptions = ['kg', 'litros', 'unidades', 'gramos'];
 
- private translate = inject(TranslateService);
+  private translate = inject(TranslateService);
   private cdr = inject(ChangeDetectorRef);
 
   constructor(private fb: FormBuilder) {

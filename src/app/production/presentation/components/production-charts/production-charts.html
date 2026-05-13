@@ -1,0 +1,74 @@
+<section class="charts-grid">
+  <mat-card class="chart-card">
+    <div class="chart-header">
+      <div>
+        <h3>{{ 'production.production_by_product_week' | translate }}</h3>
+      </div>
+
+      <mat-form-field appearance="outline" class="range-field">
+        <mat-select [value]="selectedChartRange" (selectionChange)="onChartRangeChange($event.value)">
+          <mat-option *ngFor="let option of chartRangeOptions" [value]="option.value">{{ option.label | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="bar-chart">
+      <div *ngFor="let bar of productProduction" class="bar-column">
+        <div class="bar-column__value">{{ bar.value }}</div>
+        <div class="bar-track">
+          <div class="bar-fill" [style.height.px]="barHeight(bar.value)"></div>
+        </div>
+        <div class="bar-column__label">{{ bar.label | translate }}</div>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="chart-card">
+    <div class="chart-header">
+      <div>
+        <h3>{{ 'production.daily_production_last_7' | translate }}</h3>
+      </div>
+
+      <div class="chart-chip">{{ selectedChartRangeLabel | translate }}</div>
+    </div>
+
+    <div class="line-chart">
+      <svg viewBox="0 0 340 210" preserveAspectRatio="none" aria-label="Producción diaria">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d8900d"></stop>
+            <stop offset="100%" stop-color="#f0b443"></stop>
+          </linearGradient>
+        </defs>
+        <g class="chart-grid-lines">
+          <line x1="0" y1="30" x2="340" y2="30"></line>
+          <line x1="0" y1="80" x2="340" y2="80"></line>
+          <line x1="0" y1="130" x2="340" y2="130"></line>
+          <line x1="0" y1="180" x2="340" y2="180"></line>
+        </g>
+        <polyline class="chart-line" [attr.points]="buildLinePoints(dailyProduction)" [attr.stroke]="'url(#lineGradient)'"></polyline>
+        <ng-container *ngFor="let point of dailyProduction; let index = index">
+          <circle
+            class="chart-point"
+            [attr.cx]="chartPointX(index, dailyProduction.length)"
+            [attr.cy]="chartPointY(point.value, dailyProduction)"
+            r="4.5"
+          ></circle>
+          <text
+            class="chart-point-label"
+            [attr.x]="chartPointX(index, dailyProduction.length)"
+            [attr.y]="chartPointY(point.value, dailyProduction) - 10"
+            text-anchor="middle"
+          >
+            {{ point.value }}
+          </text>
+        </ng-container>
+      </svg>
+
+      <div class="line-axis">
+        <span *ngFor="let point of dailyProduction">{{ point.label | translate }}</span>
+      </div>
+    </div>
+  </mat-card>
+</section>
+

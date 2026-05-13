@@ -16,5 +16,323 @@
     "minStock": 1,
     "lastUpdated": 17785345933,
     "id": "2"
+  },
+  {
+    "users": [
+      {
+        "id": 1,
+        "firstName": "Carlos",
+        "lastName": "Mendoza",
+        "email": "carlos@bakery.com",
+        "password": "12345678",
+        "role": "owner"
+      },
+      {
+        "id": 2,
+        "firstName": "Ana",
+        "lastName": "Quispe",
+        "email": "ana@bakery.com",
+        "password": "12345678",
+        "role": "operational-staff"
+      }
+    ]
+  },
+  {
+    "sensors": [
+      {
+        "id": 1,
+        "name": "Temperature Sensor - Oven 1",
+        "type": 0,
+        "status": 0,
+        "location": "Oven 1",
+        "minThreshold": 50,
+        "maxThreshold": 300,
+        "installedAt": "2025-01-10T08:00:00.000Z",
+        "lastReadingAt": "2026-05-12T07:45:00.000Z"
+      },
+      {
+        "id": 2,
+        "name": "Humidity Sensor - Storage",
+        "type": 1,
+        "status": 0,
+        "location": "Storage Room",
+        "minThreshold": 20,
+        "maxThreshold": 80,
+        "installedAt": "2024-11-05T10:30:00.000Z",
+        "lastReadingAt": "2026-05-11T12:10:00.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Gas Sensor - Kitchen",
+        "type": 2,
+        "status": 0,
+        "location": "Kitchen",
+        "minThreshold": 0,
+        "maxThreshold": 100,
+        "installedAt": "2026-02-20T14:00:00.000Z",
+        "lastReadingAt": null
+      },
+      {
+        "id": 4,
+        "name": "Smoke Sensor - Baking Area",
+        "type": 3,
+        "status": 1,
+        "location": "Baking Area",
+        "minThreshold": 0,
+        "maxThreshold": 1,
+        "installedAt": "2023-08-01T09:00:00.000Z",
+        "lastReadingAt": "2026-05-10T16:20:00.000Z"
+      },
+      {
+        "id": 5,
+        "name": "Temperature Sensor - Freezer",
+        "type": 0,
+        "status": 0,
+        "location": "Freezer Room",
+        "minThreshold": -20,
+        "maxThreshold": 10,
+        "installedAt": "2025-03-18T07:30:00.000Z",
+        "lastReadingAt": "2026-05-12T08:15:00.000Z"
+      },
+      {
+        "id": 6,
+        "name": "Humidity Sensor - Fermentation Room",
+        "type": 1,
+        "status": 0,
+        "location": "Fermentation Room",
+        "minThreshold": 40,
+        "maxThreshold": 90,
+        "installedAt": "2025-07-22T11:00:00.000Z",
+        "lastReadingAt": "2026-05-12T06:50:00.000Z"
+      },
+      {
+        "id": 7,
+        "name": "Gas Sensor - Boiler Area",
+        "type": 2,
+        "status": 1,
+        "location": "Boiler Area",
+        "minThreshold": 0,
+        "maxThreshold": 100,
+        "installedAt": "2024-12-14T13:20:00.000Z",
+        "lastReadingAt": "2026-05-11T21:05:00.000Z"
+      },
+      {
+        "id": 8,
+        "name": "Smoke Sensor - Packaging Zone",
+        "type": 3,
+        "status": 0,
+        "location": "Packaging Zone",
+        "minThreshold": 0,
+        "maxThreshold": 1,
+        "installedAt": "2025-09-09T15:45:00.000Z",
+        "lastReadingAt": "2026-05-12T05:40:00.000Z"
+      }
+    ],
+    "incidents": [
+      {
+        "id": 1,
+        "title": "High temperature detected in Oven 1",
+        "description": "Temperature exceeded max threshold of 300°C",
+        "status": 1,
+        "detectedAt": "2026-05-12T07:40:00.000Z",
+        "confirmedAt": "2026-05-12T07:42:00.000Z",
+        "resolvedAt": null,
+        "canceledAt": null
+      },
+      {
+        "id": 2,
+        "title": "Humidity spike in Storage",
+        "description": "Relative humidity above 80% for 15 minutes",
+        "status": 0,
+        "detectedAt": "2026-05-11T12:05:00.000Z",
+        "confirmedAt": null,
+        "resolvedAt": null,
+        "canceledAt": null
+      },
+      {
+        "id": 3,
+        "title": "Gas leak alarm in Kitchen",
+        "description": "Gas concentration reached warning level",
+        "status": 2,
+        "detectedAt": "2026-02-20T14:05:00.000Z",
+        "confirmedAt": "2026-02-20T14:06:00.000Z",
+        "resolvedAt": "2026-02-20T14:30:00.000Z",
+        "canceledAt": null
+      },
+      {
+        "id": 4,
+        "title": "False alarm smoke sensor",
+        "description": "Smoke sensor triggered during cleaning; no fire found",
+        "status": 3,
+        "detectedAt": "2025-11-01T09:10:00.000Z",
+        "confirmedAt": null,
+        "resolvedAt": null,
+        "canceledAt": "2025-11-01T09:20:00.000Z"
+      }
+    ],
+    "alerts": [
+      {
+        "id": 1,
+        "message": "Oven 1 temperature critical: 310°C",
+        "severity": 3,
+        "isRead": false,
+        "generatedAt": "2026-05-12T07:41:00.000Z"
+      },
+      {
+        "id": 2,
+        "message": "Storage humidity high: 85%",
+        "severity": 2,
+        "isRead": false,
+        "generatedAt": "2026-05-11T12:06:00.000Z"
+      },
+      {
+        "id": 3,
+        "message": "Gas sensor warning in Kitchen",
+        "severity": 1,
+        "isRead": true,
+        "generatedAt": "2026-02-20T14:06:00.000Z"
+      },
+      {
+        "id": 4,
+        "message": "Smoke sensor false alarm resolved",
+        "severity": 0,
+        "isRead": true,
+        "generatedAt": "2025-11-01T09:20:00.000Z"
+      },
+
+  {
+    "products": [
+      {
+        "id": "prod-1",
+        "name": "French bread",
+        "sku": "BRD-FR-001",
+        "imageUrl": null
+      },
+      {
+        "id": "prod-2",
+        "name": "Croissant",
+        "sku": "PST-CR-001",
+        "imageUrl": null
+      },
+      {
+        "id": "prod-3",
+        "name": "Muffin",
+        "sku": "PST-MF-001",
+        "imageUrl": null
+      },
+      {
+        "id": "prod-4",
+        "name": "Loaf bread",
+        "sku": "BRD-LF-001",
+        "imageUrl": null
+      },
+      {
+        "id": "prod-5",
+        "name": "Donut",
+        "sku": "PST-DN-001",
+        "imageUrl": null
+      }
+    ],
+    "productionLines": [
+      {
+        "id": "line-1",
+        "name": "Oven 1",
+        "status": "online",
+        "currentBatch": "batch-1"
+      },
+      {
+        "id": "line-2",
+        "name": "Oven 2",
+        "status": "online",
+        "currentBatch": "batch-2"
+      },
+      {
+        "id": "line-3",
+        "name": "Oven 3",
+        "status": "online",
+        "currentBatch": "batch-3"
+      },
+      {
+        "id": "line-4",
+        "name": "Oven 4",
+        "status": "online",
+        "currentBatch": "batch-4"
+      },
+      {
+        "id": "line-5",
+        "name": "Oven 5",
+        "status": "maintenance",
+        "currentBatch": "batch-5"
+      }
+    ],
+    "productionBatches": [
+      {
+        "id": "batch-1",
+        "name": "Oven 1 - French bread",
+        "productId": "prod-1",
+        "quantity": 500,
+        "startedAt": "2026-05-13T05:30:00.000Z",
+        "status": "running",
+        "temperature": 198,
+        "temperatureSetpoint": 200,
+        "humidity": 55,
+        "humiditySetpoint": 55,
+        "currentElectricFlow": 12.4
+      },
+      {
+        "id": "batch-2",
+        "name": "Oven 2 - Croissant",
+        "productId": "prod-2",
+        "quantity": 400,
+        "startedAt": "2026-05-13T05:40:00.000Z",
+        "status": "running",
+        "temperature": 195,
+        "temperatureSetpoint": 195,
+        "humidity": 53,
+        "humiditySetpoint": 50,
+        "currentElectricFlow": 11.6
+      },
+      {
+        "id": "batch-3",
+        "name": "Oven 3 - Muffin",
+        "productId": "prod-3",
+        "quantity": 300,
+        "startedAt": "2026-05-13T05:45:00.000Z",
+        "status": "warning",
+        "temperature": 212,
+        "temperatureSetpoint": 200,
+        "humidity": 68,
+        "humiditySetpoint": 55,
+        "currentElectricFlow": 13.8
+      },
+      {
+        "id": "batch-4",
+        "name": "Oven 4 - Loaf bread",
+        "productId": "prod-4",
+        "quantity": 720,
+        "startedAt": "2026-05-13T05:50:00.000Z",
+        "status": "running",
+        "temperature": 189,
+        "temperatureSetpoint": 190,
+        "humidity": 49,
+        "humiditySetpoint": 50,
+        "currentElectricFlow": 10.9
+      },
+      {
+        "id": "batch-5",
+        "name": "Oven 5 - Donut",
+        "productId": "prod-5",
+        "quantity": 310,
+        "startedAt": null,
+        "status": "stopped",
+        "temperature": 0,
+        "temperatureSetpoint": 185,
+        "humidity": 0,
+        "humiditySetpoint": 45,
+        "currentElectricFlow": 0
+      }
+    ]
   }
 ]
+
+

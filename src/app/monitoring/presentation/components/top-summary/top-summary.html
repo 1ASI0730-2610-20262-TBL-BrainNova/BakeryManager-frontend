@@ -1,0 +1,29 @@
+<div class="top-summary-grid">
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'monitoring.dashboard.online-sensors' | translate }}</div>
+      <div class="card-value">{{ numberOfActiveSensors() }}/{{ sensorCount() }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'monitoring.dashboard.average-temperature' | translate }}</div>
+      <div class="card-value big">{{ averageTemperature() }} °C</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'monitoring.dashboard.active-alerts' | translate }}</div>
+      <div class="card-value alert">{{ alertCount() }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'monitoring.dashboard.last-reading' | translate }}</div>
+      <div class="card-value">{{ lastReadingDate }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

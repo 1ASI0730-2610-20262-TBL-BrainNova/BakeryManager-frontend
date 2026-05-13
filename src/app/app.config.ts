@@ -5,7 +5,7 @@ import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
-import { authenticationInterceptor } from './IAM/infrastructure/interceptors/authentication.interceptor';
+import { authenticationInterceptor } from './iam/infrastructure/interceptors/authentication.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
