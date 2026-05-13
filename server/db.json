@@ -1,0 +1,133 @@
+{
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "French bread",
+      "sku": "BRD-FR-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-2",
+      "name": "Croissant",
+      "sku": "PST-CR-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-3",
+      "name": "Muffin",
+      "sku": "PST-MF-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-4",
+      "name": "Loaf bread",
+      "sku": "BRD-LF-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-5",
+      "name": "Donut",
+      "sku": "PST-DN-001",
+      "imageUrl": null
+    }
+  ],
+  "productionLines": [
+    {
+      "id": "line-1",
+      "name": "Oven 1",
+      "status": "online",
+      "currentBatch": "batch-1"
+    },
+    {
+      "id": "line-2",
+      "name": "Oven 2",
+      "status": "online",
+      "currentBatch": "batch-2"
+    },
+    {
+      "id": "line-3",
+      "name": "Oven 3",
+      "status": "online",
+      "currentBatch": "batch-3"
+    },
+    {
+      "id": "line-4",
+      "name": "Oven 4",
+      "status": "online",
+      "currentBatch": "batch-4"
+    },
+    {
+      "id": "line-5",
+      "name": "Oven 5",
+      "status": "maintenance",
+      "currentBatch": "batch-5"
+    }
+  ],
+  "productionBatches": [
+    {
+      "id": "batch-1",
+      "name": "Oven 1 - French bread",
+      "productId": "prod-1",
+      "quantity": 500,
+      "startedAt": "2026-05-13T05:30:00.000Z",
+      "status": "running",
+      "temperature": 198,
+      "temperatureSetpoint": 200,
+      "humidity": 55,
+      "humiditySetpoint": 55,
+      "currentElectricFlow": 12.4
+    },
+    {
+      "id": "batch-2",
+      "name": "Oven 2 - Croissant",
+      "productId": "prod-2",
+      "quantity": 400,
+      "startedAt": "2026-05-13T05:40:00.000Z",
+      "status": "running",
+      "temperature": 195,
+      "temperatureSetpoint": 195,
+      "humidity": 53,
+      "humiditySetpoint": 50,
+      "currentElectricFlow": 11.6
+    },
+    {
+      "id": "batch-3",
+      "name": "Oven 3 - Muffin",
+      "productId": "prod-3",
+      "quantity": 300,
+      "startedAt": "2026-05-13T05:45:00.000Z",
+      "status": "warning",
+      "temperature": 212,
+      "temperatureSetpoint": 200,
+      "humidity": 68,
+      "humiditySetpoint": 55,
+      "currentElectricFlow": 13.8
+    },
+    {
+      "id": "batch-4",
+      "name": "Oven 4 - Loaf bread",
+      "productId": "prod-4",
+      "quantity": 720,
+      "startedAt": "2026-05-13T05:50:00.000Z",
+      "status": "running",
+      "temperature": 189,
+      "temperatureSetpoint": 190,
+      "humidity": 49,
+      "humiditySetpoint": 50,
+      "currentElectricFlow": 10.9
+    },
+    {
+      "id": "batch-5",
+      "name": "Oven 5 - Donut",
+      "productId": "prod-5",
+      "quantity": 310,
+      "startedAt": null,
+      "status": "stopped",
+      "temperature": 0,
+      "temperatureSetpoint": 185,
+      "humidity": 0,
+      "humiditySetpoint": 45,
+      "currentElectricFlow": 0
+    }
+  ]
+}
