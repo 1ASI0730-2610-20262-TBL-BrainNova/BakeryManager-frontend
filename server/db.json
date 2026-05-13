@@ -43,6 +43,50 @@
       "maxThreshold": 1,
       "installedAt": "2023-08-01T09:00:00.000Z",
       "lastReadingAt": "2026-05-10T16:20:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Temperature Sensor - Freezer",
+      "type": 0,
+      "status": 0,
+      "location": "Freezer Room",
+      "minThreshold": -20,
+      "maxThreshold": 10,
+      "installedAt": "2025-03-18T07:30:00.000Z",
+      "lastReadingAt": "2026-05-12T08:15:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Humidity Sensor - Fermentation Room",
+      "type": 1,
+      "status": 0,
+      "location": "Fermentation Room",
+      "minThreshold": 40,
+      "maxThreshold": 90,
+      "installedAt": "2025-07-22T11:00:00.000Z",
+      "lastReadingAt": "2026-05-12T06:50:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Gas Sensor - Boiler Area",
+      "type": 2,
+      "status": 1,
+      "location": "Boiler Area",
+      "minThreshold": 0,
+      "maxThreshold": 100,
+      "installedAt": "2024-12-14T13:20:00.000Z",
+      "lastReadingAt": "2026-05-11T21:05:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Smoke Sensor - Packaging Zone",
+      "type": 3,
+      "status": 0,
+      "location": "Packaging Zone",
+      "minThreshold": 0,
+      "maxThreshold": 1,
+      "installedAt": "2025-09-09T15:45:00.000Z",
+      "lastReadingAt": "2026-05-12T05:40:00.000Z"
     }
   ],
   "incidents": [
