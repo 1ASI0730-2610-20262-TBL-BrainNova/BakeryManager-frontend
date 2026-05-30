@@ -64,70 +64,10 @@
     }
   ],
   "productionBatches": [
-    {
-      "id": "batch-1",
-      "name": "Oven 1 - French bread",
-      "productId": "prod-1",
-      "quantity": 500,
-      "startedAt": "2026-05-13T05:30:00.000Z",
-      "status": "running",
-      "temperature": 198,
-      "temperatureSetpoint": 200,
-      "humidity": 55,
-      "humiditySetpoint": 55,
-      "currentElectricFlow": 12.4
-    },
-    {
-      "id": "batch-2",
-      "name": "Oven 2 - Croissant",
-      "productId": "prod-2",
-      "quantity": 400,
-      "startedAt": "2026-05-13T05:40:00.000Z",
-      "status": "running",
-      "temperature": 195,
-      "temperatureSetpoint": 195,
-      "humidity": 53,
-      "humiditySetpoint": 50,
-      "currentElectricFlow": 11.6
-    },
-    {
-      "id": "batch-3",
-      "name": "Oven 3 - Muffin",
-      "productId": "prod-3",
-      "quantity": 300,
-      "startedAt": "2026-05-13T05:45:00.000Z",
-      "status": "warning",
-      "temperature": 212,
-      "temperatureSetpoint": 200,
-      "humidity": 68,
-      "humiditySetpoint": 55,
-      "currentElectricFlow": 13.8
-    },
-    {
-      "id": "batch-4",
-      "name": "Oven 4 - Loaf bread",
-      "productId": "prod-4",
-      "quantity": 720,
-      "startedAt": "2026-05-13T05:50:00.000Z",
-      "status": "running",
-      "temperature": 189,
-      "temperatureSetpoint": 190,
-      "humidity": 49,
-      "humiditySetpoint": 50,
-      "currentElectricFlow": 10.9
-    },
-    {
-      "id": "batch-5",
-      "name": "Oven 5 - Donut",
-      "productId": "prod-5",
-      "quantity": 310,
-      "startedAt": null,
-      "status": "stopped",
-      "temperature": 0,
-      "temperatureSetpoint": 185,
-      "humidity": 0,
-      "humiditySetpoint": 45,
-      "currentElectricFlow": 0
-    }
+    { "id": 1, "batchCode": "LOT-0241", "productName": "Pan francés", "plannedQuantity": 200, "producedQuantity": 200, "status": 2, "branchId": 1, "equipmentId": 1, "startedAt": "2026-05-29T06:00:00.000Z", "completedAt": "2026-05-29T08:30:00.000Z" },
+    { "id": 2, "batchCode": "LOT-0242", "productName": "Croissants", "plannedQuantity": 120, "producedQuantity": 74, "status": 1, "branchId": 1, "equipmentId": 2, "startedAt": "2026-05-29T09:00:00.000Z", "completedAt": null },
+    { "id": 3, "batchCode": "LOT-0243", "productName": "Pan ciabatta", "plannedQuantity": 80, "producedQuantity": 0, "status": 0, "branchId": 2, "equipmentId": 3, "startedAt": null, "completedAt": null },
+    { "id": 4, "batchCode": "LOT-0244", "productName": "Empanadas de pollo", "plannedQuantity": 150, "producedQuantity": 96, "status": 1, "branchId": 3, "equipmentId": 4, "startedAt": "2026-05-29T09:30:00.000Z", "completedAt": null },
+    { "id": 5, "batchCode": "LOT-0245", "productName": "Pan integral", "plannedQuantity": 100, "producedQuantity": 0, "status": 3, "branchId": 2, "equipmentId": 1, "startedAt": null, "completedAt": null }
   ]
 }

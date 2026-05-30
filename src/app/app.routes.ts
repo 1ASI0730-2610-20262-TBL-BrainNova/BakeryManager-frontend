@@ -1,16 +1,17 @@
 import { Routes } from '@angular/router';
 import { Home } from './shared/presentation/views/home/home';
-import { Production } from '../production/presentation/views/production/production';
 
 const about = () => import('./shared/presentation/views/about/about').then((m) => m.About);
 const pageNotFound = () =>
   import('./shared/presentation/views/page-not-found/page-not-found').then((m) => m.PageNotFound);
+const productionRoutes = () =>
+  import('./production/presentation/production.routes').then((m) => m.productionRoutes);
 
 const baseTitle = 'BakeryManager';
 
 export const routes: Routes = [
   { path: 'home', component: Home, title: `${baseTitle} - Home` },
-  { path: 'production', component: Production, title: `${baseTitle} - Production` },
+  { path: 'production', loadChildren: productionRoutes },
   { path: 'about', loadComponent: about, title: `${baseTitle} - About` },
   // TODO: Add more paths here!
   { path: '', redirectTo: '/home', pathMatch: 'full' },
