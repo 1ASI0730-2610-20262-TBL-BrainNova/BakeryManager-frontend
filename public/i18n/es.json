@@ -1,15 +1,18 @@
 {
   "option": {
     "home": "Inicio",
-    "about": "Acerca de",
-    "dashboard": "Panel",
+    "about": "Sobre Nosotros",
+    "inventory": "Inventario",
+    "sign-in": "Iniciar Sesión",
+    "sign-up": "Registrarse",
+    "dashboard": "Panel de Control",
     "production": "Producción",
     "iot": "Monitoreo IoT",
-    "incident": "Incidente"
+    "incident": "Incidentes"
   },
   "about": {
     "title": "Sobre nosotros",
-    "content": "BakeryManager es una solución para las necesidades de su panadería."
+    "content": "BakeryManager es una solución para las necesidades relacionadas con tu panadería."
   },
   "home": {
     "title": "Bienvenido",
@@ -22,8 +25,16 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
-    "powered-by": "Desarrollado en",
+    "powered-by": "Desarrollado por",
     "and": "y"
+  },
+  "monitoring": {
+    "dashboard": {
+      "online-sensors": "Sensores en Línea",
+      "average-temperature": "Temp. Promedio",
+      "active-alerts": "Alertas Activas",
+      "last-reading": "Última Lectura"
+    }
   },
   "inventory": {
     "title": "Gestión de Inventario - BakeryManager",
@@ -34,10 +45,13 @@
       "stock": "Stock Inicial",
       "unit": "Unidad de Medida",
       "min_stock": "Stock Mínimo para Alerta",
-      "hint": "Se le notificará cuando el stock sea igual o inferior a este valor.",
-      "button": "Agregar al Inventario",
-      "open": "Agregar Ítem",
-      "close": "Cerrar Formulario"
+      "hint": "Se te notificará cuando el stock sea igual o menor que este valor.",
+      "button": "Añadir al Inventario",
+      "open": "Añadir Artículo",
+      "close": "Cerrar Formulario",
+      "errors": {
+        "required": "El nombre es obligatorio."
+      }
     },
     "table": {
       "supply": "Insumo",
@@ -46,11 +60,11 @@
       "status": "Estado"
     },
     "status": {
-      "restock": "Reponer",
+      "restock": "Reabastecer",
       "ok": "Disponible"
     },
     "errors": {
-      "required": "El nombre es obligatorio."
+      "required": "Este campo es obligatorio."
     },
     "units": {
       "kg": "kg",
@@ -58,8 +72,72 @@
       "unidades": "unidades",
       "gramos": "gramos"
     }
-  }
-  ,
+  },
+  "sign-in": {
+    "title": "Bienvenido de nuevo",
+    "subtitle": "Inicia sesión para gestionar tu panadería",
+    "email": "Correo electrónico",
+    "email-placeholder": "tu@panaderia.com",
+    "password": "Contraseña",
+    "password-placeholder": "Mín. 8 caracteres",
+    "submit": "Iniciar Sesión",
+    "loading": "Iniciando sesión...",
+    "no-account": "¿No tienes una cuenta?",
+    "create-one": "Crea una",
+    "errors": {
+      "email-required": "El correo electrónico es obligatorio.",
+      "email-invalid": "Por favor, ingresa un correo válido.",
+      "password-required": "La contraseña es obligatoria.",
+      "password-min": "La contraseña debe tener al menos 8 caracteres.",
+      "invalid-credentials": "Correo o contraseña incorrectos.",
+      "no-connection": "No se pudo conectar al servidor. Inténtalo de nuevo.",
+      "unexpected": "Ocurrió un error inesperado. Inténtalo de nuevo."
+    },
+    "panel": {
+      "title": "Gestiona tu panadería con inteligencia real",
+      "subtitle": "Monitoreo IoT · Alertas de incidentes · Analítica · Multi-sucursal"
+    }
+  },
+  "sign-up": {
+    "title": "Crea tu cuenta",
+    "subtitle": "Comienza a gestionar tu panadería de forma más inteligente",
+    "first-name": "Nombre",
+    "first-name-placeholder": "Luis",
+    "last-name": "Apellido",
+    "last-name-placeholder": "Tufiño",
+    "email": "Correo electrónico",
+    "email-placeholder": "tu@panaderia.com",
+    "role": "Tu rol",
+    "password": "Contraseña",
+    "password-placeholder": "Mín. 8 caracteres",
+    "confirm-password": "Confirmar contraseña",
+    "confirm-password-placeholder": "Repite tu contraseña",
+    "submit": "Crear Cuenta",
+    "loading": "Creando cuenta...",
+    "have-account": "¿Ya tienes una cuenta?",
+    "sign-in-link": "Inicia sesión",
+    "success": "¡Cuenta creada! Redirigiendo al inicio de sesión...",
+    "roles": {
+      "owner": "Propietario / Administrador",
+      "administrator": "Gerente de Sucursal",
+      "operational-staff": "Personal Operativo"
+    },
+    "errors": {
+      "first-name-required": "El nombre es obligatorio.",
+      "first-name-min": "Mín. 2 caracteres.",
+      "last-name-required": "El apellido es obligatorio.",
+      "last-name-min": "Mín. 2 caracteres.",
+      "email-required": "El correo electrónico es obligatorio.",
+      "email-invalid": "Por favor, ingresa un correo válido.",
+      "password-required": "La contraseña es obligatoria.",
+      "password-min": "Mín. 8 caracteres.",
+      "confirm-required": "Por favor, confirma tu contraseña.",
+      "password-mismatch": "Las contraseñas no coinciden.",
+      "email-taken": "Este correo ya está registrado.",
+      "no-connection": "No se pudo conectar al servidor. Inténtalo de nuevo.",
+      "unexpected": "Ocurrió un error inesperado. Inténtalo de nuevo."
+    }
+  },
   "production": {
     "title": "Producción",
     "heading": "Gestión de Producción",
@@ -68,7 +146,7 @@
       "active-batches": "Lotes activos",
       "in-progress": "En progreso",
       "completed": "Completados hoy",
-      "efficiency": "Eficiencia prom."
+      "efficiency": "Eficiencia promedio"
     },
     "status": {
       "planned": "Planificado",
@@ -76,7 +154,13 @@
       "completed": "Completado",
       "cancelled": "Cancelado"
     },
-    "batch": { "progress": "Avance" },
-    "actions": { "start": "Iniciar", "complete": "Completar", "cancel": "Cancelar" }
+    "batch": {
+      "progress": "Progreso"
+    },
+    "actions": {
+      "start": "Iniciar",
+      "complete": "Completar",
+      "cancel": "Cancelar"
+    }
   }
 }
