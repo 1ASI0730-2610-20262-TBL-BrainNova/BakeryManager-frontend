@@ -1,18 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { filter } from 'rxjs';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
-/**
- import {
- AuthenticationSection
- } from '../../../../iam/presentation/components/authentication-section/authentication-section';
- **/
 
 /**
  * Main shell component that hosts top-level navigation and routed content.
@@ -31,7 +27,6 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
     MatIconModule,
     TranslatePipe,
     LanguageSwitcher,
-    // AuthenticationSection
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
@@ -41,8 +36,7 @@ export class Layout {
     { link: '/home', label: 'option.dashboard', icon: 'bar_chart' },
     { link: '/iot', label: 'option.iot', icon: 'sensors' },
     { link: '/incident', label: 'option.incident', icon: 'notification_important' },
-    { link: '/production', label: 'option.production', icon: 'precision_manufacturing' }
-    // TODO: Add more navigations for the app.
+    { link: '/production', label: 'option.production', icon: 'precision_manufacturing' },
   ]);
 
   showShell = signal(true);

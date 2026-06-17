@@ -1,24 +1,12 @@
-<mat-card class="sensor-card" role="button" tabindex="0">
-  <mat-card-header>
-    <mat-card-title>{{ sensor.name }}</mat-card-title>
-    <mat-card-subtitle>{{ sensor.location }}</mat-card-subtitle>
+<div class="sensor-card">
+  <div class="sensor-name">{{ sensor.name }}</div>
+  <div class="sensor-location">{{ sensor.location }}</div>
+  <div class="value-row">
+    <div class="type-label">
+      {{ sensor.type === SensorType.TEMPERATURE ? 'Temperatura' : sensor.type === SensorType.HUMIDITY ? 'Humedad Relativa' : sensor.type === SensorType.GAS ? 'Gas' : 'Vapor' }}
+    </div>
     <div class="status-container">
-      @if (sensor.status === SensorStatus.ACTIVE) {
-        <span ngClass="dot green" class="status-dot" aria-hidden="true"></span>
-      } @else {
-        <span ngClass="dot gray" class="status-dot" aria-hidden="true"></span>
-      }
+      {{ sensor.status === SensorStatus.ACTIVE ? 'Activo' : 'Inactivo' }}
     </div>
-  </mat-card-header>
-
-  <mat-card-content>
-    <div class="value-row">
-      <!--div class="value">{{ displayValue }}</div-->
-      <div class="type-label">
-        {{ sensor.type === SensorType.TEMPERATURE ? 'Temperatura' :
-        sensor.type === SensorType.HUMIDITY ? 'Humedad Relativa' :
-          sensor.type === SensorType.GAS ? 'Gas' : 'Vapor' }}
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>
