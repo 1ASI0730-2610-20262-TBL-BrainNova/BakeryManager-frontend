@@ -1,0 +1,19 @@
+.mat-button-toggle-group[name="language"] {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.mat-button-toggle {
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  min-width: 36px;
+}
+
+/* Small visual tweak so the active toggle looks consistent with the theme */
+.mat-button-toggle-checked {
+  background: rgba(255, 170, 46, 0.12) !important;
+  color: #fff !important;
+}
+
+

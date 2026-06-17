@@ -1,24 +1,23 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, inject } from '@angular/core';
+import { MatCard, MatCardContent } from '@angular/material/card';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ProductionStore } from '../../../application/production.store';
 
-export interface ProductionSummaryTile {
-  icon: string;
-  label: string;
-  value: string;
-  accent: 'success' | 'warning';
-}
-
+/**
+ * Presentation component showing the production dashboard summary cards
+ * (US-93 dashboard, US-92 efficiency).
+ */
 @Component({
   selector: 'app-production-summary',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule, TranslatePipe],
+  imports: [MatCard, MatCardContent, TranslatePipe],
   templateUrl: './production-summary.html',
   styleUrl: './production-summary.css',
 })
-export class ProductionSummaryComponent {
-  @Input({ required: true }) tiles: ProductionSummaryTile[] = [];
-}
+export class ProductionSummary {
+  private readonly store = inject(ProductionStore);
 
+  protected activeBatches = this.store.activeBatchesCount;
+  protected inProgress = this.store.inProgressCount;
+  protected completed = this.store.completedCount;
+  protected efficiency = this.store.efficiency;
+}

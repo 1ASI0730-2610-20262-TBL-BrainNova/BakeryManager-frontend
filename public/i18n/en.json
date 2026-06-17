@@ -2,7 +2,10 @@
   "option": {
     "home": "Home",
     "about": "About Us",
-    "inventory": "Inventory"
+    "dashboard": "Dashboard",
+    "production": "Production",
+    "iot": "IOT Monitoring",
+    "incident": "Incident"
   },
   "about": {
     "title": "About us",
@@ -60,6 +63,26 @@
       "unidades": "units",
       "gramos": "grams"
     }
+  }
+  ,
+  "production": {
+    "title": "Production",
+    "heading": "Production Management",
+    "empty": "No production batches yet.",
+    "dashboard": {
+      "active-batches": "Active batches",
+      "in-progress": "In progress",
+      "completed": "Completed today",
+      "efficiency": "Avg. efficiency"
+    },
+    "status": {
+      "planned": "Planned",
+      "in-progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "batch": { "progress": "Progress" },
+    "actions": { "start": "Start", "complete": "Complete", "cancel": "Cancel" }
   }
 }
 

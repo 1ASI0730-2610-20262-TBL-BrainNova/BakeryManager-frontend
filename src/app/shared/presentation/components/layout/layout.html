@@ -1,16 +1,38 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <h1>BakeryManager</h1>
-    <div class="mat-spacer"></div>
-    @for (option of options(); track option.label) {
-      <a mat-button [routerLink]="option.link" routerLinkActive="active">{{ option.label | translate }}</a>
-    }
-    <app-language-switcher/>
-  </mat-toolbar-row>
-</mat-toolbar>
+<mat-sidenav-container class="shell">
+  <mat-sidenav class="shell-sidenav" mode="side" opened>
+    <div class="brand">
+      <img src="/bakery-manager-logo.svg" alt="BakeryManager logo" class="brand-logo" />
+      <div>
+        <div class="brand-name">BakeryManager</div>
+        <div class="brand-subtitle">By BrainNova</div>
+      </div>
+    </div>
 
-<router-outlet/>
+    <nav class="nav-panel">
+      <a
+        *ngFor="let option of options()"
+        mat-list-item
+        [routerLink]="option.link"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
+        <span matListItemTitle>{{ option.label | translate }}</span>
+      </a>
+    </nav>
+  </mat-sidenav>
 
-@if (showShell()) {
-  <app-footer-content/>
-}
+  <mat-sidenav-content class="shell-content">
+    <header class="shell-header">
+      <div>
+        <div class="shell-eyebrow">BakeryManager</div>
+        <h1>Operations dashboard</h1>
+      </div>
+      <app-language-switcher class="shell-language-switcher"/>
+    </header>
+
+    <main class="shell-main">
+      <router-outlet/>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

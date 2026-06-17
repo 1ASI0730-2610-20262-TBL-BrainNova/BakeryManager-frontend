@@ -1,107 +1,73 @@
-[
-  {
-    "name": "Harina de Trigo Especial",
-    "description": "Harina de fuerza ideal para panificación artesanal",
-    "quantity": 50,
-    "unit": "kg",
-    "minStock": 15
-  },
-  {
-    "name": "Levadura Fresca",
-    "description": "Levadura en bloque para fermentación de masas prensadas",
-    "quantity": 12,
-    "unit": "kg",
-    "minStock": 5
-  },
-  {
-    "name": "Azúcar Blanca Refinada",
-    "description": "Insumo para endulzar masas de pastelería y bizcochos",
-    "quantity": 30,
-    "unit": "kg",
-    "minStock": 10
-  },
-  {
-    "name": "Mantequilla sin Sal",
-    "description": "Mantequilla premium para hojaldres y croissants",
-    "quantity": 25,
-    "unit": "kg",
-    "minStock": 8
-  },
-  {
-    "name": "Sal Industrial Marítima",
-    "description": "Sal fina para control de fermentación y sabor",
-    "quantity": 15,
-    "unit": "kg",
-    "minStock": 5
-  },
-  {
-    "name": "Huevos de Granja",
-    "description": "Huevos frescos para brillo y consistencia de masas",
-    "quantity": 180,
-    "unit": "unidades",
-    "minStock": 60
-  },
-  {
-    "name": "Leche Entera Pastelera",
-    "description": "Leche líquida para enriquecer masas suaves",
-    "quantity": 24,
-    "unit": "litros",
-    "minStock": 8
-  },
-  {
-    "name": "Esencia de Vainilla",
-    "description": "Aromatizante concentrado para repostería fina",
-    "quantity": 5,
-    "unit": "litros",
-    "minStock": 2
-  },
-  {
-    "name": "Chocolate Bitter 60%",
-    "description": "Gotas de chocolate para muffins y panetones",
-    "quantity": 10,
-    "unit": "kg",
-    "minStock": 4
-  },
-  {
-    "name": "Polvo de Hornear",
-    "description": "Agente leudante químico para queques y bizcochuelos",
-    "quantity": 8,
-    "unit": "kg",
-    "minStock": 3
-  },
-  {
-    "name": "Premix Pan de Molde",
-    "description": "Mezcla preparada para producción rápida de pan de molde",
-    "quantity": 4,
-    "unit": "kg",
-    "minStock": 10
-  },
-  {
-    "name": "Manteca Vegetal",
-    "description": "Grasa para dar suavidad y conservación al pan común",
-    "quantity": 20,
-    "unit": "kg",
-    "minStock": 6
-  },
-  {
-    "name": "Ajonjolí Tostado",
-    "description": "Semillas para decoración superior de panes de hamburguesa",
-    "quantity": 3,
-    "unit": "kg",
-    "minStock": 1
-  },
-  {
-    "name": "Pasas Rubias",
-    "description": "Fruta deshidratada para panes dulces y bizcochos",
-    "quantity": 2,
-    "unit": "kg",
-    "minStock": 5
-  },
-  {
-    "name": "Agua Purificada",
-    "description": "Agua filtrada para control térmico de masas",
-    "quantity": 500,
-    "unit": "litros",
-    "minStock": 100
-  }
-]
+{
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "French bread",
+      "sku": "BRD-FR-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-2",
+      "name": "Croissant",
+      "sku": "PST-CR-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-3",
+      "name": "Muffin",
+      "sku": "PST-MF-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-4",
+      "name": "Loaf bread",
+      "sku": "BRD-LF-001",
+      "imageUrl": null
+    },
+    {
+      "id": "prod-5",
+      "name": "Donut",
+      "sku": "PST-DN-001",
+      "imageUrl": null
+    }
+  ],
+  "productionLines": [
+    {
+      "id": "line-1",
+      "name": "Oven 1",
+      "status": "online",
+      "currentBatch": "batch-1"
+    },
+    {
+      "id": "line-2",
+      "name": "Oven 2",
+      "status": "online",
+      "currentBatch": "batch-2"
+    },
+    {
+      "id": "line-3",
+      "name": "Oven 3",
+      "status": "online",
+      "currentBatch": "batch-3"
+    },
+    {
+      "id": "line-4",
+      "name": "Oven 4",
+      "status": "online",
+      "currentBatch": "batch-4"
+    },
+    {
+      "id": "line-5",
+      "name": "Oven 5",
+      "status": "maintenance",
+      "currentBatch": "batch-5"
+    }
+  ],
+  "productionBatches": [
+    { "id": 1, "batchCode": "LOT-0241", "productName": "Pan francés", "plannedQuantity": 200, "producedQuantity": 200, "status": 2, "branchId": 1, "equipmentId": 1, "startedAt": "2026-05-29T06:00:00.000Z", "completedAt": "2026-05-29T08:30:00.000Z" },
+    { "id": 2, "batchCode": "LOT-0242", "productName": "Croissants", "plannedQuantity": 120, "producedQuantity": 74, "status": 1, "branchId": 1, "equipmentId": 2, "startedAt": "2026-05-29T09:00:00.000Z", "completedAt": null },
+    { "id": 3, "batchCode": "LOT-0243", "productName": "Pan ciabatta", "plannedQuantity": 80, "producedQuantity": 0, "status": 0, "branchId": 2, "equipmentId": 3, "startedAt": null, "completedAt": null },
+    { "id": 4, "batchCode": "LOT-0244", "productName": "Empanadas de pollo", "plannedQuantity": 150, "producedQuantity": 96, "status": 1, "branchId": 3, "equipmentId": 4, "startedAt": "2026-05-29T09:30:00.000Z", "completedAt": null },
+    { "id": 5, "batchCode": "LOT-0245", "productName": "Pan integral", "plannedQuantity": 100, "producedQuantity": 0, "status": 3, "branchId": 2, "equipmentId": 1, "startedAt": null, "completedAt": null }
+  ]
+}

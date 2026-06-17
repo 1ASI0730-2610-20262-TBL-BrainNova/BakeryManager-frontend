@@ -1,8 +1,11 @@
 {
   "option": {
     "home": "Inicio",
-    "about": "Nosotros",
-    "inventory": "Inventario"
+    "about": "Acerca de",
+    "dashboard": "Panel",
+    "production": "Producción",
+    "iot": "Monitoreo IoT",
+    "incident": "Incidente"
   },
   "about": {
     "title": "Sobre nosotros",
@@ -19,7 +22,7 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
-    "powered-by": "Desarrollado por",
+    "powered-by": "Desarrollado en",
     "and": "y"
   },
   "inventory": {
@@ -55,5 +58,25 @@
       "unidades": "unidades",
       "gramos": "gramos"
     }
+  }
+  ,
+  "production": {
+    "title": "Producción",
+    "heading": "Gestión de Producción",
+    "empty": "Aún no hay lotes de producción.",
+    "dashboard": {
+      "active-batches": "Lotes activos",
+      "in-progress": "En progreso",
+      "completed": "Completados hoy",
+      "efficiency": "Eficiencia prom."
+    },
+    "status": {
+      "planned": "Planificado",
+      "in-progress": "En progreso",
+      "completed": "Completado",
+      "cancelled": "Cancelado"
+    },
+    "batch": { "progress": "Avance" },
+    "actions": { "start": "Iniciar", "complete": "Completar", "cancel": "Cancelar" }
   }
 }

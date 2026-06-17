@@ -1,12 +1,18 @@
-import { Component, signal, inject } from '@angular/core';
-import { Router, NavigationEnd, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
-import { FooterContent } from '../footer-content/footer-content';
-import { CommonModule } from '@angular/common';
-import { filter } from 'rxjs';
+/**
+ import {
+ AuthenticationSection
+ } from '../../../../iam/presentation/components/authentication-section/authentication-section';
+ **/
 
 /**
  * Main shell component that hosts top-level navigation and routed content.
@@ -20,17 +26,23 @@ import { filter } from 'rxjs';
     MatToolbarModule,
     MatButtonModule,
     RouterLinkActive,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
     TranslatePipe,
     LanguageSwitcher,
-    FooterContent,
+    // AuthenticationSection
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
 export class Layout {
   options = signal([
-    { link: '/home', label: 'option.home' },
-    { link: '/about', label: 'option.about' },
+    { link: '/home', label: 'option.dashboard', icon: 'bar_chart' },
+    { link: '/iot', label: 'option.iot', icon: 'sensors' },
+    { link: '/incident', label: 'option.incident', icon: 'notification_important' },
+    { link: '/production', label: 'option.production', icon: 'precision_manufacturing' }
+    // TODO: Add more navigations for the app.
   ]);
 
   showShell = signal(true);
