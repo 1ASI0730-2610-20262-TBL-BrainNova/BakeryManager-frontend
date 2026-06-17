@@ -1,0 +1,66 @@
+<div class="sign-up-container">
+
+  <div class="sign-up-card">
+
+    <div class="sign-up-header">
+      <div class="logo-wrapper">
+        <span class="logo-icon">🍞</span>
+        <span class="logo-text">BakeryManager</span>
+      </div>
+      <h1 class="sign-up-title">{{ 'sign-up.title' | translate }}</h1>
+      <p class="sign-up-subtitle">{{ 'sign-up.subtitle' | translate }}</p>
+    </div>
+
+    <form [formGroup]="form" (submit)="performSignUp()" class="sign-up-form" novalidate>
+
+      <div class="form-group">
+        <label for="username" class="form-label">{{ 'sign-up.email' | translate }}</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉</span>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            [placeholder]="'sign-up.email-placeholder' | translate"
+            class="form-input with-icon"
+            [class.input-error]="isInvalidControl(form, 'username')"
+          />
+        </div>
+        @if (isInvalidControl(form, 'username')) {
+          <span class="error-text">{{ errorMessagesForControl(form, 'username') }}</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">{{ 'sign-up.password' | translate }}</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            [placeholder]="'sign-up.password-placeholder' | translate"
+            class="form-input with-icon"
+            [class.input-error]="isInvalidControl(form, 'password')"
+          />
+        </div>
+        @if (isInvalidControl(form, 'password')) {
+          <span class="error-text">{{ errorMessagesForControl(form, 'password') }}</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="form.invalid">
+        <span>{{ 'sign-up.submit' | translate }}</span>
+      </button>
+
+    </form>
+
+    <div class="sign-up-footer">
+      <p>{{ 'sign-up.have-account' | translate }}
+        <a routerLink="/iam/sign-in" class="link">{{ 'sign-up.sign-in-link' | translate }}</a>
+      </p>
+    </div>
+
+  </div>
+
+</div>

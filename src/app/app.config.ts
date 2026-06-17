@@ -6,13 +6,13 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 import { routes } from './app.routes';
-import { authenticationInterceptor } from './iam/infrastructure/interceptors/authentication.interceptor';
+import { iamInterceptor } from './iam/infrastructure/iam.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([authenticationInterceptor])),
+    provideHttpClient(withInterceptors([iamInterceptor])),
     provideTranslateService({
       loader: provideTranslateHttpLoader({ prefix: './i18n/', suffix: '.json' }),
       fallbackLang: 'en',

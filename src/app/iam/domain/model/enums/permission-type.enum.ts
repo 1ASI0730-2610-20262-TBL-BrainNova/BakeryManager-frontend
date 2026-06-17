@@ -1,7 +1,0 @@
-export enum PermissionType {
-  READ = 'READ',
-  WRITE = 'WRITE',
-  DELETE = 'DELETE',
-  MANAGE_USERS = 'MANAGE_USERS',
-  MANAGE_SENSORS = 'MANAGE_SENSORS'
-}

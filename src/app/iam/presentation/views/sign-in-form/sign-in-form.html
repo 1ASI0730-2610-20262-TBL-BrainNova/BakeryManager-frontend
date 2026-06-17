@@ -1,0 +1,89 @@
+<div class="sign-in-container">
+
+  <div class="sign-in-card">
+
+    <div class="sign-in-header">
+      <div class="logo-wrapper">
+        <span class="logo-icon">🍞</span>
+        <span class="logo-text">BakeryManager</span>
+      </div>
+      <h1 class="sign-in-title">{{ 'sign-in.title' | translate }}</h1>
+      <p class="sign-in-subtitle">{{ 'sign-in.subtitle' | translate }}</p>
+    </div>
+
+    <form [formGroup]="form" (submit)="performSignIn()" class="sign-in-form" novalidate>
+
+      <div class="form-group">
+        <label for="username" class="form-label">{{ 'sign-in.email' | translate }}</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉</span>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            [placeholder]="'sign-in.email-placeholder' | translate"
+            class="form-input"
+            [class.input-error]="isInvalidControl(form, 'username')"
+            autocomplete="username"
+          />
+        </div>
+        @if (isInvalidControl(form, 'username')) {
+          <span class="error-text">{{ errorMessagesForControl(form, 'username') }}</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">{{ 'sign-in.password' | translate }}</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            [placeholder]="'sign-in.password-placeholder' | translate"
+            class="form-input"
+            [class.input-error]="isInvalidControl(form, 'password')"
+            autocomplete="current-password"
+          />
+        </div>
+        @if (isInvalidControl(form, 'password')) {
+          <span class="error-text">{{ errorMessagesForControl(form, 'password') }}</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="form.invalid">
+        <span>{{ 'sign-in.submit' | translate }}</span>
+      </button>
+
+    </form>
+
+    <div class="sign-in-footer">
+      <p>{{ 'sign-in.no-account' | translate }}
+        <a routerLink="/iam/sign-up" class="link">{{ 'sign-in.create-one' | translate }}</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="sign-in-panel">
+    <div class="panel-content">
+      <h2>{{ 'sign-in.panel.title' | translate }}</h2>
+      <p>{{ 'sign-in.panel.subtitle' | translate }}</p>
+      <div class="panel-stats">
+        <div class="stat">
+          <span class="stat-value">220°C</span>
+          <span class="stat-label">Main Oven · Operational</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">6°C</span>
+          <span class="stat-label">Cold Chamber · Check</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">62%</span>
+          <span class="stat-label">Room Humidity · Normal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
