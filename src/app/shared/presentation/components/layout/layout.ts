@@ -39,16 +39,17 @@ export class Layout {
     { link: '/inventory', label: 'option.inventory', icon: 'inventory_2' },
   ]);
 
-  showShell = signal(true);
-
   private readonly authRoutes = ['/sign-in', '/sign-up'];
+
+  showShell = signal(true);
 
   constructor() {
     const router = inject(Router);
+    this.showShell.set(!this.authRoutes.some(r => router.url.startsWith(r)));
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.showShell.set(!this.authRoutes.includes(event.urlAfterRedirects));
+        this.showShell.set(!this.authRoutes.some(r => event.urlAfterRedirects.startsWith(r)));
       });
   }
 }
