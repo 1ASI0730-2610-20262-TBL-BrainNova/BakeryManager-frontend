@@ -43,12 +43,18 @@ export class ProductionApi extends BaseApi {
     return this.batchesEndpoint.create(batch);
   }
 
-  /**
-   * Persists changes of an existing production batch.
-   * @param batch The batch to update.
-   * @param id The ID of the batch.
-   */
-  updateBatch(batch: ProductionBatch, id: number): Observable<ProductionBatch> {
-    return this.batchesEndpoint.update(batch, id);
+  /** PATCH /api/v1/batches/{id}/start */
+  startBatch(id: number): Observable<ProductionBatch> {
+    return this.batchesEndpoint.start(id);
+  }
+
+  /** PATCH /api/v1/batches/{id}/complete */
+  completeBatch(id: number): Observable<ProductionBatch> {
+    return this.batchesEndpoint.complete(id);
+  }
+
+  /** PATCH /api/v1/batches/{id}/cancel */
+  cancelBatch(id: number): Observable<ProductionBatch> {
+    return this.batchesEndpoint.cancel(id);
   }
 }

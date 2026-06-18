@@ -4,7 +4,6 @@ import { Incident } from '../domain/model/incident.entity';
 import { Alert } from '../domain/model/alert.entity';
 import { MonitoringApi } from '../infrastructure/monitoring-api';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -51,7 +50,6 @@ export class MonitoringStore {
   constructor(private monitoringApi: MonitoringApi) {
     this.loadSensors();
     this.loadIncidents();
-    this.loadAlerts();
   }
 
   /**
