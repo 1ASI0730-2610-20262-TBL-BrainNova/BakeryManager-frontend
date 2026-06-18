@@ -30,8 +30,8 @@ export class ProductionBatchesApiEndpoint extends BaseApiEndpoint<
   }
 
   /** PATCH /api/v1/batches/{id}/complete */
-  complete(id: number): Observable<ProductionBatch> {
-    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}/complete`, {}).pipe(
+  complete(id: number, producedQuantity: number): Observable<ProductionBatch> {
+    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}/complete`, { producedQuantity }).pipe(
       map((r) => this.assembler.toEntityFromResource(r)),
       catchError(this.handleError('Failed to complete batch')),
     );

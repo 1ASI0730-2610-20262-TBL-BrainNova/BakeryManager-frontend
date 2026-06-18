@@ -116,7 +116,8 @@ export class ProductionStore {
 
   /** Completes a batch via PATCH /api/v1/batches/{id}/complete (US-85). */
   completeBatch(id: number): void {
-    this.productionApi.completeBatch(id)
+    const producedQuantity = this.batches().find(b => b.id === id)?.plannedQuantity ?? 0;
+    this.productionApi.completeBatch(id, producedQuantity)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (updated) => this.batchesSignal.update((list) => list.map((b) => b.id === id ? updated : b)),

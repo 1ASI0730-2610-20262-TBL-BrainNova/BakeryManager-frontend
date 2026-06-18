@@ -49,8 +49,8 @@ export class ProductionApi extends BaseApi {
   }
 
   /** PATCH /api/v1/batches/{id}/complete */
-  completeBatch(id: number): Observable<ProductionBatch> {
-    return this.batchesEndpoint.complete(id);
+  completeBatch(id: number, producedQuantity: number): Observable<ProductionBatch> {
+    return this.batchesEndpoint.complete(id, producedQuantity);
   }
 
   /** PATCH /api/v1/batches/{id}/cancel */
