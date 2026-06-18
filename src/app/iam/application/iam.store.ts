@@ -79,14 +79,14 @@ export class IamStore {
         this.isSignedInSignal.set(true);
         this.currentUsernameSignal.set(signInResource.username);
         this.currentUserIdSignal.set(signInResource.id);
-        router.navigate(['/inventory']).then();
+        router.navigate(['/home']).then();
       },
       error: (err) => {
         console.error('Sign-in failed:', err);
         this.isSignedInSignal.set(false);
         this.currentUsernameSignal.set(null);
         this.currentUserIdSignal.set(null);
-        router.navigate(['/iam/sign-in']).then();
+        router.navigate(['/sign-in']).then();
       }
     });
   }
@@ -100,14 +100,14 @@ export class IamStore {
     this.iamApi.signUp(signUpCommand).subscribe({
       next: (signUpResource) => {
         console.log('Sign-up successful:', signUpResource);
-        router.navigate(['/iam/sign-in']).then();
+        router.navigate(['/sign-in']).then();
       },
       error: (err) => {
         console.error('Sign-up failed:', err);
         this.isSignedInSignal.set(false);
         this.currentUsernameSignal.set(null);
         this.currentUserIdSignal.set(null);
-        router.navigate(['/iam/sign-up']).then();
+        router.navigate(['/sign-up']).then();
       }
     });
   }
@@ -121,7 +121,7 @@ export class IamStore {
     this.isSignedInSignal.set(false);
     this.currentUsernameSignal.set(null);
     this.currentUserIdSignal.set(null);
-    router.navigate(['/iam/sign-in']).then();
+    router.navigate(['/sign-in']).then();
   }
 
   /**

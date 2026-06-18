@@ -25,6 +25,6 @@ export const routes: Routes = [
   { path: 'sign-in', loadComponent: signIn, title: `${baseTitle} - Sign In` },
   { path: 'sign-up', loadComponent: signUp, title: `${baseTitle} - Sign Up` },
   { path: 'about', loadComponent: about, title: `${baseTitle} - About` },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: '**', loadComponent: pageNotFound, title: `${baseTitle} - Page Not Found` },
 ];
