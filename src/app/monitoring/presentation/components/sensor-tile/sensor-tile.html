@@ -1,0 +1,12 @@
+<div class="sensor-card">
+  <div class="sensor-name">{{ sensor.name }}</div>
+  <div class="sensor-location">{{ sensor.location }}</div>
+  <div class="value-row">
+    <div class="type-label">
+      {{ sensor.type === SensorType.TEMPERATURE ? 'Temperatura' : sensor.type === SensorType.HUMIDITY ? 'Humedad Relativa' : sensor.type === SensorType.GAS ? 'Gas' : 'Vapor' }}
+    </div>
+    <div class="status-container">
+      {{ sensor.status === SensorStatus.ACTIVE ? 'Activo' : 'Inactivo' }}
+    </div>
+  </div>
+</div>

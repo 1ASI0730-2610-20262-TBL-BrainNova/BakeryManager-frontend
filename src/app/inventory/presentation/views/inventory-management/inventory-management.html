@@ -1,0 +1,33 @@
+<div class="inventory-container">
+  <div class="brand-hero-banner">
+    <div class="banner-title-group">
+      <h1>BakeryManager</h1>
+      <p class="subtitle">By BrainNova Development Team</p>
+    </div>
+    <div class="banner-stats">
+      <div class="stat-pill">
+        <span class="stat-label">Active Supplies</span>
+        <span class="stat-number">{{ inventoryItems.length }}</span>
+      </div>
+      <div class="stat-pill alert-pill">
+        <span class="stat-label">Low Stock Alerts</span>
+        <span class="stat-number">{{ getLowStockCount() }}</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="inventory-layout">
+    <div class="form-section" *ngIf="isFormVisible">
+      <app-inventory-item-form (itemAdded)="addItem($event)"></app-inventory-item-form>
+    </div>
+
+    <div class="list-section" *ngIf="!isFormVisible">
+      <app-inventory-item-list [dataSource]="inventoryItems"></app-inventory-item-list>
+    </div>
+  </main>
+
+  <button mat-fab extended color="primary" class="fab-button" (click)="toggleForm()">
+    <mat-icon>{{ isFormVisible ? 'list' : 'add' }}</mat-icon>
+    {{ (isFormVisible ? 'inventory.form.close' : 'inventory.form.open') | translate }}
+  </button>
+</div>

@@ -1,0 +1,35 @@
+<article class="batch">
+  <div class="bar" [class]="statusClass()"></div>
+  <div class="batch-body">
+    <div class="batch-head">
+      <div>
+        <div class="batch-title">{{ batch().productName }}</div>
+        <div class="batch-meta">
+          <span class="code">{{ batch().batchCode }}</span>
+        </div>
+      </div>
+      <span class="badge" [class]="statusClass()">{{ statusKey() | translate }}</span>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span>{{ 'production.batch.progress' | translate }}</span>
+        <span><b>{{ batch().producedQuantity }}</b> / {{ batch().plannedQuantity }} · {{ batch().getProgress() }}%</span>
+      </div>
+      <div class="track">
+        <div class="fill" [class]="statusClass()"
+             [style.width.%]="batch().status === BatchStatus.PLANNED ? 0 : batch().getProgress()"></div>
+      </div>
+    </div>
+
+    <div class="batch-actions">
+      @if (batch().status === BatchStatus.PLANNED) {
+        <button class="btn btn-primary" (click)="onStart()">{{ 'production.actions.start' | translate }}</button>
+        <button class="btn btn-ghost" (click)="onCancel()">{{ 'production.actions.cancel' | translate }}</button>
+      } @else if (batch().status === BatchStatus.IN_PROGRESS) {
+        <button class="btn btn-primary" (click)="onComplete()">{{ 'production.actions.complete' | translate }}</button>
+        <button class="btn btn-ghost" (click)="onCancel()">{{ 'production.actions.cancel' | translate }}</button>
+      }
+    </div>
+  </div>
+</article>

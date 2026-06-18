@@ -1,7 +1,14 @@
 {
   "option": {
     "home": "Home",
-    "about": "About Us"
+    "about": "About Us",
+    "inventory": "Inventory",
+    "sign-in": "Sign In",
+    "sign-up": "Sign Up",
+    "dashboard": "Dashboard",
+    "production": "Production",
+    "iot": "IOT Monitoring",
+    "incident": "Incident"
   },
   "about": {
     "title": "About us",
@@ -20,5 +27,153 @@
     "rights": "All rights reserved.",
     "powered-by": "Powered by",
     "and": "and"
+  },
+  "monitoring": {
+    "dashboard": {
+      "online-sensors": "Online Sensors",
+      "average-temperature": "Avg. Temperature",
+      "active-alerts": "Active Alerts",
+      "last-reading": "Last Reading"
+    }
+  },
+  "inventory": {
+    "title": "Inventory Management - BakeryManager",
+    "form": {
+      "title": "Register New Supply",
+      "name": "Supply Name",
+      "description": "Description",
+      "stock": "Initial Stock",
+      "unit": "Unit of Measure",
+      "min_stock": "Minimum Stock for Alert",
+      "hint": "You will be notified when stock is equal to or less than this value.",
+      "button": "Add to Inventory",
+      "open": "Add Item",
+      "close": "Close Form",
+      "errors": {
+        "required": "Name is required ."
+      }
+    },
+    "table": {
+      "supply": "Supply",
+      "actual_stock": "Current Stock",
+      "unit": "Unit",
+      "status": "Status"
+    },
+    "status": {
+      "restock": "Replenish",
+      "ok": "Available"
+    },
+    "errors": {
+      "required": "This field is required."
+    },
+    "units": {
+      "kg": "kg",
+      "litros": "liters",
+      "unidades": "units",
+      "gramos": "grams"
+    }
+  },
+  "sign-in": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to manage your bakery",
+    "email": "Email address",
+    "email-placeholder": "you@bakery.com",
+    "password": "Password",
+    "password-placeholder": "Min. 8 characters",
+    "submit": "Sign In",
+    "loading": "Signing in...",
+    "no-account": "Don't have an account?",
+    "create-one": "Create one",
+    "errors": {
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email.",
+      "password-required": "Password is required.",
+      "password-min": "Password must be at least 8 characters.",
+      "invalid-credentials": "Invalid email or password.",
+      "no-connection": "Cannot connect to server. Please try again.",
+      "unexpected": "An unexpected error occurred. Please try again."
+    },
+    "panel": {
+      "title": "Manage your bakery with real intelligence",
+      "subtitle": "IoT monitoring · Incident alerts · Analytics · Multi-branch"
+    }
+  },
+  "sign-up": {
+    "title": "Create your account",
+    "subtitle": "Start managing your bakery smarter",
+    "first-name": "First name",
+    "first-name-placeholder": "Luis",
+    "last-name": "Last name",
+    "last-name-placeholder": "Tufiño",
+    "email": "Email address",
+    "email-placeholder": "you@bakery.com",
+    "role": "Your role",
+    "password": "Password",
+    "password-placeholder": "Min. 8 characters",
+    "confirm-password": "Confirm password",
+    "confirm-password-placeholder": "Repeat your password",
+    "submit": "Create Account",
+    "loading": "Creating account...",
+    "have-account": "Already have an account?",
+    "sign-in-link": "Sign in",
+    "success": "Account created! Redirecting to sign in...",
+    "roles": {
+      "owner": "Owner / Administrator",
+      "administrator": "Branch Manager",
+      "operational-staff": "Operational Staff"
+    },
+    "errors": {
+      "first-name-required": "First name is required.",
+      "first-name-min": "Min. 2 characters.",
+      "last-name-required": "Last name is required.",
+      "last-name-min": "Min. 2 characters.",
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email.",
+      "password-required": "Password is required.",
+      "password-min": "Min. 8 characters.",
+      "confirm-required": "Please confirm your password.",
+      "password-mismatch": "Passwords do not match.",
+      "email-taken": "This email is already registered.",
+      "no-connection": "Cannot connect to server. Please try again.",
+      "unexpected": "An unexpected error occurred. Please try again."
+    }
+  },
+  "production": {
+    "title": "Production",
+    "heading": "Production Management",
+    "empty": "No production batches yet.",
+    "form": {
+      "title": "New Production Batch",
+      "open": "New Batch",
+      "batchCode": "Batch Code",
+      "productName": "Product Name",
+      "plannedQuantity": "Planned Quantity",
+      "submit": "Create Batch",
+      "cancel": "Cancel",
+      "errors": {
+        "required": "This field is required.",
+        "min": "Minimum value is 1."
+      }
+    },
+    "dashboard": {
+      "active-batches": "Active batches",
+      "in-progress": "In progress",
+      "completed": "Completed today",
+      "efficiency": "Avg. efficiency"
+    },
+    "status": {
+      "planned": "Planned",
+      "in-progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "batch": {
+      "progress": "Progress"
+    },
+    "actions": {
+      "start": "Start",
+      "complete": "Complete",
+      "cancel": "Cancel"
+    }
   }
 }

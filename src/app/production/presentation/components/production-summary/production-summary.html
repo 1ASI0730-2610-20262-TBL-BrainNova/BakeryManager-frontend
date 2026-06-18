@@ -1,0 +1,29 @@
+<div class="summary-grid">
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'production.dashboard.active-batches' | translate }}</div>
+      <div class="card-value caramel">{{ activeBatches() }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'production.dashboard.in-progress' | translate }}</div>
+      <div class="card-value accent">{{ inProgress() }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'production.dashboard.completed' | translate }}</div>
+      <div class="card-value success">{{ completed() }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="summary-card">
+    <mat-card-content>
+      <div class="card-title">{{ 'production.dashboard.efficiency' | translate }}</div>
+      <div class="card-value">{{ efficiency() }}%</div>
+    </mat-card-content>
+  </mat-card>
+</div>

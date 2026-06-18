@@ -1,0 +1,40 @@
+.batch {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(44, 26, 14, 0.12);
+  border: 1px solid #ece2d2;
+  padding: 20px 22px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.bar { width: 6px; border-radius: 6px; align-self: stretch; flex-shrink: 0; }
+.bar.planned { background: #c4862b; }
+.bar.progress { background: #d4691e; }
+.bar.completed { background: #5a8a5f; }
+.bar.cancelled { background: #b9aa97; }
+.batch-body { flex: 1; min-width: 0; }
+.batch-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+.batch-title { font-size: 1.12rem; font-weight: 700; color: #2c1a0e; }
+.batch-meta { color: #8a7a68; font-size: 0.88rem; margin-top: 4px; }
+.batch-meta .code { color: #c4862b; font-weight: 600; }
+.badge { font-size: 0.78rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; white-space: nowrap; }
+.badge.planned { background: #f6ecda; color: #c4862b; }
+.badge.progress { background: #fbe6d6; color: #d4691e; }
+.badge.completed { background: #e1eee2; color: #5a8a5f; }
+.badge.cancelled { background: #efe9e2; color: #8a7a68; }
+.progress-wrap { margin-top: 16px; }
+.progress-info { display: flex; justify-content: space-between; font-size: 0.82rem; color: #8a7a68; margin-bottom: 6px; }
+.progress-info b { color: #2c1a0e; }
+.track { height: 10px; background: #e8d5b0; border-radius: 999px; overflow: hidden; }
+.fill { height: 100%; border-radius: 999px; transition: width 0.5s ease; }
+.fill.progress { background: linear-gradient(90deg, #c4862b, #d4691e); }
+.fill.completed { background: #5a8a5f; }
+.fill.planned { background: #e8d5b0; }
+.fill.cancelled { background: #cabba8; }
+.batch-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.btn { font-family: inherit; font-size: 0.85rem; font-weight: 600; border-radius: 10px; padding: 8px 16px; cursor: pointer; border: 1.5px solid transparent; }
+.btn-primary { background: #d4691e; color: #fff; }
+.btn-ghost { background: transparent; color: #c4862b; border-color: #c4862b; }

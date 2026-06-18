@@ -1,0 +1,11 @@
+<div class="sensor-grid-wrapper">
+  @if (sensors() && sensors().length) {
+    <div class="sensor-grid">
+      @for (sensor of sensors(); track sensor.id) {
+        <app-sensor-tile [sensor]="sensor"/>
+      }
+    </div>
+  } @else {
+    <mat-card class="empty-card">No hay sensores disponibles</mat-card>
+  }
+</div>

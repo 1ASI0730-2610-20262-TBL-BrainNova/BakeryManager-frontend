@@ -1,0 +1,12 @@
+.sensor-grid-wrapper { padding: 8px 16px; }
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.empty-card {
+  padding: 16px;
+  text-align:center;
+  color:#8a7b6a;
+  border: 1px solid #e7dccf;
+}
