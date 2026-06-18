@@ -10,5 +10,6 @@ export interface InventoryItem extends BaseEntity {
   quantity: number;
   unit: string;
   minStock: number;
+  price: number;
   lastUpdated: Date;
 }

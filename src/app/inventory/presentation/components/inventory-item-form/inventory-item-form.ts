@@ -41,6 +41,7 @@ export class InventoryItemForm {
       quantity: [0, [Validators.required, Validators.min(0)]],
       unit: ['kg', Validators.required],
       minStock: [0, [Validators.required, Validators.min(0)]],
+      price: [0, [Validators.required, Validators.min(0)]],
     });
     this.translate.onLangChange.subscribe(() => {
       this.cdr.markForCheck();
@@ -55,7 +56,7 @@ export class InventoryItemForm {
         lastUpdated: new Date(),
       };
       this.itemAdded.emit(newItem);
-      this.inventoryForm.reset({ unit: 'kg', quantity: 0, minStock: 0 });
+      this.inventoryForm.reset({ unit: 'kg', quantity: 0, minStock: 0, price: 0 });
     }
   }
 }

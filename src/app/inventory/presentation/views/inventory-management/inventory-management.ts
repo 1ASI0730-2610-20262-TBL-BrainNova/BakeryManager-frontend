@@ -71,6 +71,7 @@ export class InventoryManagement implements OnInit {
       quantity: Number(item.quantity),
       unit: item.unit,
       minStock: Number(item.minStock),
+      price: Number(item.price ?? 0),
     };
 
     this.inventoryService.createItem(itemToSend as any).subscribe({
