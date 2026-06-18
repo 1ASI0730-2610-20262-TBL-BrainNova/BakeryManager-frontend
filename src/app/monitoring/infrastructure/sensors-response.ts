@@ -6,8 +6,8 @@ import { BaseResource, BaseResponse } from '../../shared/infrastructure/base-res
 export interface SensorResource extends BaseResource {
   id: number;
   name: string;
-  type: number;
-  status: number;
+  sensorType: number;
+  sensorStatus: number;
   location: string;
   minThreshold: number;
   maxThreshold: number;

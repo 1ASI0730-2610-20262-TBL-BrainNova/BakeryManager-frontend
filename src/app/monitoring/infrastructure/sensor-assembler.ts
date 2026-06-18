@@ -20,8 +20,8 @@ export class SensorAssembler implements BaseAssembler<Sensor, SensorResource, Se
     return new Sensor({
       id: resource.id,
       name: resource.name,
-      type: resource.type,
-      status: resource.status,
+      type: resource.sensorType,
+      status: resource.sensorStatus,
       location: resource.location,
       minThreshold: resource.minThreshold,
       maxThreshold: resource.maxThreshold,
@@ -37,8 +37,8 @@ export class SensorAssembler implements BaseAssembler<Sensor, SensorResource, Se
     return {
       id: entity.id,
       name: entity.name,
-      type: entity.type as number,
-      status: entity.status as number,
+      sensorType: entity.type as number,
+      sensorStatus: entity.status as number,
       location: entity.location,
       minThreshold: entity.minThreshold,
       maxThreshold: entity.maxThreshold,
