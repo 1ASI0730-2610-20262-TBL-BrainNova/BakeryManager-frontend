@@ -1,0 +1,37 @@
+<div class="batch-form-card">
+  <div class="form-title">{{ 'production.form.title' | translate }}</div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body">
+    <div class="field">
+      <label class="field-label">{{ 'production.form.batchCode' | translate }}</label>
+      <input class="field-input" formControlName="batchCode" placeholder="LOTE-001" />
+      @if (form.get('batchCode')?.invalid && form.get('batchCode')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.productName' | translate }}</label>
+      <input class="field-input" formControlName="productName" placeholder="Pan de molde" />
+      @if (form.get('productName')?.invalid && form.get('productName')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.plannedQuantity' | translate }}</label>
+      <input class="field-input" type="number" formControlName="plannedQuantity" min="1" />
+      @if (form.get('plannedQuantity')?.invalid && form.get('plannedQuantity')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.min' | translate }}</span>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        {{ 'production.form.submit' | translate }}
+      </button>
+      <button type="button" class="btn btn-ghost" (click)="onCancel()">
+        {{ 'production.form.cancel' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -4,6 +4,6 @@
  */
 export const environment = {
   production: false,
-  bakeryManagerProviderApiBaseUrl: 'http://localhost:3000',
+  bakeryManagerProviderApiBaseUrl: 'https://bakery-manager-platform-pkoa.onrender.com/api/v1',
   productionProviderBatchesEndpointPath: '/productionBatches',
 };

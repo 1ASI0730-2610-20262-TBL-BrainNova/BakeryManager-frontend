@@ -30,6 +30,19 @@
     "title": "Production",
     "heading": "Production Management",
     "empty": "No production batches yet.",
+    "form": {
+      "title": "New Production Batch",
+      "open": "New Batch",
+      "batchCode": "Batch Code",
+      "productName": "Product Name",
+      "plannedQuantity": "Planned Quantity",
+      "submit": "Create Batch",
+      "cancel": "Cancel",
+      "errors": {
+        "required": "This field is required.",
+        "min": "Minimum value is 1."
+      }
+    },
     "dashboard": {
       "active-batches": "Active batches",
       "in-progress": "In progress",

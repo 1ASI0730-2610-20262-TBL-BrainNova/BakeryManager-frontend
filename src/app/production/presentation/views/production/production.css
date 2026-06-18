@@ -1,7 +1,9 @@
 .production-view { padding: 24px 32px; background: #f9f4ec; min-height: 100%; }
-.view-header { margin-bottom: 16px; }
+.view-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
 .eyebrow { color: #8a7a68; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.4px; }
 h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #2c1a0e; }
+.btn-new { font-family: inherit; font-size: 0.87rem; font-weight: 600; background: #2c1a0e; color: #f5ead6; border: none; border-radius: 10px; padding: 10px 20px; cursor: pointer; letter-spacing: 0.2px; }
+.btn-new:hover { background: #3d2511; }
 .batch-list { padding: 8px 16px; }
 .empty { color: #8a7a68; text-align: center; padding: 24px; }
 .error-banner { background: #fbeeec; color: #b23a2e; border: 1px solid #ecc4bf; border-radius: 12px; padding: 12px 16px; margin: 8px 16px; }

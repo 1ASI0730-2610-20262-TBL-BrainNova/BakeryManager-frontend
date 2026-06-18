@@ -30,6 +30,19 @@
     "title": "Producción",
     "heading": "Gestión de Producción",
     "empty": "Aún no hay lotes de producción.",
+    "form": {
+      "title": "Nuevo Lote de Producción",
+      "open": "Nuevo Lote",
+      "batchCode": "Código del Lote",
+      "productName": "Nombre del Producto",
+      "plannedQuantity": "Cantidad Planificada",
+      "submit": "Crear Lote",
+      "cancel": "Cancelar",
+      "errors": {
+        "required": "Este campo es obligatorio.",
+        "min": "El valor mínimo es 1."
+      }
+    },
     "dashboard": {
       "active-batches": "Lotes activos",
       "in-progress": "En progreso",

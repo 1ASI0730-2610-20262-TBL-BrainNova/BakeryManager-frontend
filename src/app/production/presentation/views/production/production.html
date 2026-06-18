@@ -4,7 +4,16 @@
       <div class="eyebrow">BakeryManager · {{ 'production.title' | translate }}</div>
       <h1>{{ 'production.heading' | translate }}</h1>
     </div>
+    @if (!showForm()) {
+      <button class="btn-new" (click)="openForm()">
+        + {{ 'production.form.open' | translate }}
+      </button>
+    }
   </header>
+
+  @if (showForm()) {
+    <app-batch-form (closed)="closeForm()" />
+  }
 
   <app-production-summary />
 
