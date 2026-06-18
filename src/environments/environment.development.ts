@@ -11,5 +11,5 @@ export const environment = {
   platformProviderSignUpEndpointPath: '/authentication/sign-up',
   monitoringProviderIncidentsEndpointPath: '/incidents',
   monitoringProviderSensorsEndpointPath: '/sensors',
-  inventoryProviderItemsEndpointPath: '/inventory/items',
+  inventoryProviderItemsEndpointPath: '/inventory-items',
 };
