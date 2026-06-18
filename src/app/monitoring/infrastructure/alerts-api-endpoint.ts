@@ -5,7 +5,7 @@ import { AlertAssembler } from './alert-assembler';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
-const alertsEndpointUrl = `${environment.bakeryManagerProviderApiBaseUrl}${environment.monitoringProviderAlertsEndpointPath}`;
+const alertsEndpointUrl = `${environment.bakeryManagerProviderApiBaseUrl}/alerts`;
 
 /**
  * Infrastructure endpoint client for alert CRUD integration.
