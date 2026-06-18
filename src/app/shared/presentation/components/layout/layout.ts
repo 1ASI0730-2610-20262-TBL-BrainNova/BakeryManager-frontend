@@ -41,11 +41,14 @@ export class Layout {
 
   private readonly authRoutes = ['/sign-in', '/sign-up'];
 
-  showShell = signal(true);
+  showShell = signal(false);
 
   constructor() {
     const router = inject(Router);
-    this.showShell.set(!this.authRoutes.some(r => router.url.startsWith(r)));
+    const initialPath = window.location.pathname;
+    const isAuthInitially =
+      this.authRoutes.some(r => initialPath.startsWith(r)) || initialPath === '/';
+    this.showShell.set(!isAuthInitially);
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
