@@ -94,24 +94,42 @@ export class ProductionStore {
       });
   }
 
-  /** Starts a batch (US-83). */
+  /** Starts a batch via PATCH /api/v1/batches/{id}/start (US-83). */
   startBatch(id: number): void {
-    this.mutate(id, (b) => b.start());
+    this.productionApi.startBatch(id)
+      .pipe(takeUntilDestroyed())
+      .subscribe({
+        next: (updated) => this.batchesSignal.update((list) => list.map((b) => b.id === id ? updated : b)),
+        error: (err) => this.errorSignal.set(this.formatError(err, 'Failed to start batch.')),
+      });
   }
 
   /** Registers produced quantity (US-84). */
   registerProgress(id: number, quantity: number): void {
-    this.mutate(id, (b) => b.registerProgress(quantity));
+    const batch = this.batches().find((b) => b.id === id);
+    if (!batch) return;
+    batch.registerProgress(quantity);
+    this.batchesSignal.update((list) => [...list]);
   }
 
-  /** Completes a batch (US-85). */
+  /** Completes a batch via PATCH /api/v1/batches/{id}/complete (US-85). */
   completeBatch(id: number): void {
-    this.mutate(id, (b) => b.complete());
+    this.productionApi.completeBatch(id)
+      .pipe(takeUntilDestroyed())
+      .subscribe({
+        next: (updated) => this.batchesSignal.update((list) => list.map((b) => b.id === id ? updated : b)),
+        error: (err) => this.errorSignal.set(this.formatError(err, 'Failed to complete batch.')),
+      });
   }
 
-  /** Cancels a batch (US-86). */
+  /** Cancels a batch via PATCH /api/v1/batches/{id}/cancel (US-86). */
   cancelBatch(id: number): void {
-    this.mutate(id, (b) => b.cancel());
+    this.productionApi.cancelBatch(id)
+      .pipe(takeUntilDestroyed())
+      .subscribe({
+        next: (updated) => this.batchesSignal.update((list) => list.map((b) => b.id === id ? updated : b)),
+        error: (err) => this.errorSignal.set(this.formatError(err, 'Failed to cancel batch.')),
+      });
   }
 
   /**
@@ -134,30 +152,8 @@ export class ProductionStore {
     });
   }
 
-  /**
-   * Applies a domain mutation to a batch and persists it.
-   * @private
-   */
-  private mutate(id: number, action: (b: ProductionBatch) => void): void {
-    const batch = this.batches().find((b) => b.id === id);
-    if (!batch) return;
-    action(batch);
-    this.batchesSignal.update((list) => [...list]);
-    this.productionApi
-      .updateBatch(batch, id)
-      .pipe(takeUntilDestroyed())
-      .subscribe({
-        error: (err) => this.errorSignal.set(this.formatError(err, 'Failed to update batch.')),
-      });
-  }
-
-  /**
-   * Loads all production batches from the API.
-   * @private
-   */
   private loadBatches(): void {
     this.loadingSignal.set(true);
-    this.errorSignal.set(null);
     this.productionApi
       .getBatches()
       .pipe(takeUntilDestroyed())
@@ -165,10 +161,9 @@ export class ProductionStore {
         next: (batches) => {
           this.batchesSignal.set(batches);
           this.loadingSignal.set(false);
-          this.errorSignal.set(null);
         },
-        error: (err) => {
-          this.errorSignal.set(this.formatError(err, 'Failed to load batches.'));
+        error: () => {
+          this.batchesSignal.set([]);
           this.loadingSignal.set(false);
         },
       });
