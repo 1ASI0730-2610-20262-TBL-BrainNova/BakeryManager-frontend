@@ -21,25 +21,25 @@ export class ProductionBatchesApiEndpoint extends BaseApiEndpoint<
     super(http, productionBatchesEndpointUrl, new ProductionBatchAssembler());
   }
 
-  /** PATCH /api/v1/batches/{id}/start */
+  /** PATCH /api/v1/batches/{id} — status: IN_PROGRESS */
   start(id: number): Observable<ProductionBatch> {
-    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}/start`, {}).pipe(
+    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}`, { status: 'IN_PROGRESS' }).pipe(
       map((r) => this.assembler.toEntityFromResource(r)),
       catchError(this.handleError('Failed to start batch')),
     );
   }
 
-  /** PATCH /api/v1/batches/{id}/complete */
+  /** PATCH /api/v1/batches/{id} — status: COMPLETED */
   complete(id: number, producedQuantity: number): Observable<ProductionBatch> {
-    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}/complete`, { producedQuantity }).pipe(
+    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}`, { status: 'COMPLETED', producedQuantity }).pipe(
       map((r) => this.assembler.toEntityFromResource(r)),
       catchError(this.handleError('Failed to complete batch')),
     );
   }
 
-  /** PATCH /api/v1/batches/{id}/cancel */
+  /** PATCH /api/v1/batches/{id} — status: CANCELLED */
   cancel(id: number): Observable<ProductionBatch> {
-    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}/cancel`, {}).pipe(
+    return this.http.patch<ProductionBatchResource>(`${this.endpointUrl}/${id}`, { status: 'CANCELLED' }).pipe(
       map((r) => this.assembler.toEntityFromResource(r)),
       catchError(this.handleError('Failed to cancel batch')),
     );
